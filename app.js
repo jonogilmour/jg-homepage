@@ -34,6 +34,6 @@ app.set('view engine', options.extname);
 app.set("views", path.join(__dirname, "/views"));
 
 // Start server
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
 	console.log("Listening on port 3000 in " + app.get("env") + " mode"); 
 });
