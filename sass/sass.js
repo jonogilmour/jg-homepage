@@ -8,7 +8,7 @@ var sass = require("node-sass-middleware");
 var path = require("path");
 module.exports = sass({
     src: path.join(__dirname, "stylesheets"),
-    dest: path.join(__dirname, "public"),
+    dest: path.join(__dirname, "..", "public", "css"),
     debug: true,
     prefix: "/css"
 });

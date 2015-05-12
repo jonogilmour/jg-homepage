@@ -1,0 +1,9 @@
+{
+	"default_layout" : "index",
+	"home" : {
+		"view" : "home",
+		"layout" : "index"
+	},
+	"about" : "about",
+	"_404" : "404"
+}

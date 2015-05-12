@@ -8,33 +8,47 @@
 var router = require("express").Router();
 module.exports = router;
 
+var routeMap = require("./routes.json");
+
 router.use(function(req, res, next) {
 	console.log(req.method, req.url);
 	next();
 });
 
-// ENCAPSULATE IN A "base.js" ROUTE FILE
 router.route("/")
-	.get(function(req, res) {
-		res.render("home", {layout: "index"});
-	});
+.get(function(req, res) {
+	res.render("home", {layout: "index"});
+});
 
-router.route("/about")
-	.get(function(req, res) {
-		res.render("about", {layout: "index"});
-	});
-
-router.get("/test", function(req, res) {
-	var data = "{" +
-		"\"a\":\"hello\"," +
-		"\"b\":\"world\"," +
-		"\"c\":2,\n" +
-		"\"d\":true\n" +	
-	"}";
-	console.log(data);
-	data = JSON.parse(data);
-	console.log(data);
-	res.send(data.a.toString());
+router.route("/:page")
+.get(function(req, res) {
+	var page = routeMap[req.params.page];
+	if (page) {
+		if (typeof page === "object") {
+			res.render(page.view, {layout: page.layout});
+		}
+		else {
+			res.render(page, {layout: routeMap.default_layout});
+		}
+	}
+	else {
+		res.status(404);
+		
+		if (req.accepts('html')) {
+			res.render(routeMap._404, {layout: routeMap.default_layout});
+			return;
+		}
+		
+		// respond with json
+		if (req.accepts('json')) {
+			res.send({ error: 'Not found' });
+			return;
+		}
+		
+		// default to plain-text. send()
+		res.type('txt').send('Not found');
+	}
+	
 });
 
 /////////////////////////////////////////
