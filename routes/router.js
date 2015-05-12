@@ -5,6 +5,7 @@
 	@param {Object} router
 */
 
+var util = require("util");
 var router = require("express").Router();
 module.exports = router;
 
@@ -17,18 +18,30 @@ router.use(function(req, res, next) {
 
 router.route("/")
 .get(function(req, res) {
-	res.render("home", {layout: "index"});
+	var page = routeMap.home;
+	if (typeof page === "object") {
+		res.render(page.view, {layout: page.layout});
+	}
+	else {
+		res.render(page, {layout: routeMap.default_layout});
+	}
 });
 
 router.route("/:page")
 .get(function(req, res) {
 	var page = routeMap[req.params.page];
 	if (page) {
-		if (typeof page === "object") {
-			res.render(page.view, {layout: page.layout});
+		if(page.redirect) {
+			var status = page.status || 302;
+			res.redirect(status, page.target)
 		}
 		else {
-			res.render(page, {layout: routeMap.default_layout});
+			if (typeof page === "object") {
+				res.render(page.view, {layout: page.layout});
+			}
+			else {
+				res.render(page, {layout: routeMap.default_layout});
+			}
 		}
 	}
 	else {

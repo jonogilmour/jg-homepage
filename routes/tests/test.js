@@ -46,4 +46,15 @@ describe("Routing", function() {
 			done();	
 		})
 	});
+	
+	it("/redirect-test should return status 302 and redirect to /about", function(done) {
+		request(app)
+		.get("/redirect-test")
+		.expect(302)
+		.end(function(err, res) {
+			if(err) throw err;
+			res.header["location"].should.containEql("about");
+			done();	
+		})
+	});
 });

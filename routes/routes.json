@@ -5,5 +5,10 @@
 		"layout" : "index"
 	},
 	"about" : "about",
-	"_404" : "404"
+	"_404" : "404",
+	"redirect-test" : {
+		"redirect" : true,
+		"status" : 302,
+		"target" : "about"
+	} 
 }

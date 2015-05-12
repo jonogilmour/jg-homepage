@@ -1,0 +1,23 @@
+The following is a list of expected rules to follow when drawing up route map entries.
+
+Default Layout File
+--
+	"url-target": "view-name"
+--
+
+Specific Layout File
+--
+	"url-target": {
+		layout: "layout-name",
+		view: "view-name"
+	}
+--
+
+Redirection
+--
+	url-target: {
+		redirect: true,
+		status: 302 | 301,
+		target: "url"
+	}
+--
