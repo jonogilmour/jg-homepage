@@ -6,6 +6,7 @@
 	$sm-screen-min: 768px;
 	$md-screen-min: 992px;
 	$lg-screen-min: 1200px;
+	$xs-screen-text: 14px;
 	
 	// Backgrounds
 	$warning-colour: #dd5757;
@@ -18,9 +19,21 @@
 	// Text
 	$light-colour: #fff;
 
+/* Other Settings */
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+@-ms-viewport{
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+
 /* Elements */
 body {
 	background-color: $default-colour;
+	width: 100%;
 }
 
 footer {
@@ -62,13 +75,39 @@ main {
 
 /* Identifiers */
 #jg-main-body {
-	padding: 50px 0 0 0;
-	background-color: #ffffff;
+	padding-top: 50px;
+}
+
+#jg-main-banner {
+	background-color: $happy-colour;
+	padding: 30px 0;
+	color: $light-colour;
+	
+	h1 {
+		font-size: 48px;
+	}
+	
+	h3 {
+		font-size: 24px;
+		margin-top: 0;
+	}
+	
+	#jg-btn {
+		margin-top: 15px;
+		
+		@media screen and (max-width: $xs-screen-max) {
+			font-size: $xs-screen-text;
+		}
+	}
 }
 
 #jg-home-panels {
 	/* IDs */
 	#jg-work-panel {
+		
+		@media screen and (max-width: $xs-screen-max) {
+			background-color: $warning-colour;
+		}
 		
 		&:hover {
 			background-color: $warning-colour;
@@ -77,12 +116,20 @@ main {
 	
 	#jg-history-panel {
 		
+		@media screen and (max-width: $xs-screen-max) {
+			background-color: $safe-colour;
+		}
+		
 		&:hover {
 			background-color: $safe-colour;
 		}
 	}
 	
 	#jg-about-panel {
+		
+		@media screen and (max-width: $xs-screen-max) {
+			background-color: $purple-colour;
+		}
 		
 		&:hover {
 			background-color: $purple-colour;
@@ -109,25 +156,6 @@ main {
 	
 	.glyphicon {
 		font-size: 20px;
-	}
-}
-
-#jg-main-banner {
-	background-color: $happy-colour;
-	padding: 30px 0;
-	color: $light-colour;
-	
-	h1 {
-		font-size: 48px;
-	}
-	
-	h3 {
-		font-size: 24px;
-		margin-top: 0;
-	}
-	
-	#btn-row {
-		margin-top: 15px;
 	}
 }
 
