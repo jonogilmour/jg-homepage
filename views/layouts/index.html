@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="JGilmour">
 	<head>
-		{{> head}}
+		{{> non-render/head}}
 	</head>
 	<body>
-		{{> header}}
-		<div class="container-fluid" id="main-body">
-			<div class="container ma-max-width">
+		{{> render/template/header}}
+		<div class="container-fluid" id="jg-main-body">
 				{{{body}}} 
-			</div>
 		</div>
-		{{> footer}} 
+		{{> render/template/footer}} 
 	</body>
 </html>
