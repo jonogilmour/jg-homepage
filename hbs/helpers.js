@@ -61,5 +61,11 @@ module.exports = {
 			i++;
 		}
 		return htmlOut;
+	},
+	/*
+		Grabs the current year
+	*/
+	year: function() {
+		return new Date().getFullYear().toString();
 	}
 } 
