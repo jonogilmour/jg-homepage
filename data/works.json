@@ -2,37 +2,37 @@
 	"works" : {
 		"major" : 
 		[	{
-				"name" : "My Personal Homepage",
-				"link" : "http://google.com/",
+				"name" : "Jonathan Gilmour Homepage",
+				"link" : "https://github.com/jonogilmour/jg-homepage",
 				"format" : "Individual",
 				"languages" : ["Javascript", "HTML5/CSS3", "SASS/SCSS", "JQuery"],
 				"technologies" : ["NodeJS", "Handlebars Template Engine", "AngularJS", "JQuery", "Mocha", "ShouldJS", "SuperTest", "Twitter Bootstrap", "Git", "Heroku"],
 				"description" : "<p>This website you're currently using was a personal learning exercise that turned into something a lot bigger.</p> <p>I initially started this site as a way to learn NodeJS and try my hand at creating a webserver from the ground up. Then, I decided I would build a website from the ground up on this platform to really showcase my skills at web development, like an online resumé.</p> <p>Prior to creating this site, I only had experience in Javascript and JQuery - zero NodeJS, zero AngularJS, and not much BDD experience either. In creating this site I set out to accomplish a few goals</p> <ul> <li>Learn a backend framework (Node)</li> <li>Learn a frontend framework (Angular)</li> <li>Learn a testing framework and learn BDD/TDD (Mocha)</li> <li>Become more proficient at the Git command line</li> <li>Learn more about web design and responsive design, using tools like Bootstrap and SASS</li> </ul> <p>In just over a week I was building templates and partials with helpers using Handlebars, adding dynamic routes in Express, and loading data from JSON files to populate web content without writing a single extra line of HTML (this projects section is actually built from JSON), and a whole lot more. I've also had to make sure to adhere to the asynchronous nature of NodeJS (no synchronous calls like <span class=\"pre\">require()</span> in routes, for example)</p> <p>What you see here is built completely from the ground up from scratch. I've used Heroku simply to host the site publicly, and I've written every line of code and every HTML template myself. Mobile has been at the forefront of my mind during development, so every change is tested on large devices, like laptops and desktops, and mobile devices, like iPad and iPhone, to ensure that everything is just as usable and presentable on mobile as it is on larger screens. In doing so I've learned an incredible amount about responsive design, and rather than creating separate mobile/desktop sites, the one site simply fits different formats.</p> <p>I've also made sure to minimise dependency on client-side Javascript, and do as much templating, routing, and data processing as possible on the server-side. Turning off Javascript will not affect the function of the site, simply disabling \"nice-to-haves\" rather than \"must-haves\". All custom CSS is compiled using SASS on the server, utilising mixins, nested selectors, variables, and @media queries, amongst others.</p> <p>During the course of this (ongoing) project, I've fallen further in love with web development, and now enjoy coding the backend just as much as designing the frontend, and the skills I've acquired can be applied to a wealth of other scenarios outside of web development as well.</p>"
 			},
 			{
-				"name" : "Project BM",
-				"link" : "http://google.com/",
-				"format" : "Individual",
-				"languages" : ["Javascript", "HTML/CSS"],
-				"technologies" : ["AngularJS"],
-				"description" : ""
+				"name" : "RageJump",
+				"link" : "https://bitbucket.org/michaeman/ragejumper",
+				"format" : "Team (4)",
+				"languages" : ["Swift", "Objective-C"],
+				"technologies" : ["Xcode", "SpriteKit", "GameCenter", "Interface Builder"],
+				"description" : "<p>RageJump is a platform game for iOS that myself and three other students developed at the end of 2014.</p><p>As the final capstone project for my Bachelor of Science (Computing and Software Systems) at the University of Melbourne, the task involved coming up with an idea for a mobile game, then planning, documenting, developing, and presenting the game in a \"startup\" scenario.</p><p>The game is simple in nature, but was a fantastic learning experience with a huge amount of work going into making the game perform well, and be intuitive to play.</p><p>As the Swift programming language had only just been released, we were actually developing the game in a beta version of the software, and had to overcome a lot of problems with Xcode and the APIs we were using, which gradually improved with updates. This also meant that much of the API documentation was in Objective-C, which I had used previously, so I had to do a lot of translating between Objective-C and Swift to know what to do.</p><p>Along with these issues, one member of the team wasn't contributing, so I decided to get the rest of the team organised, cull any unnecessary features, and ensure we had a finished game to present by the deadline. This worked out well, despite the end result not being as full-featured as we had planned initially.</p><p>During the project I further expanded my documentation skills, as we were required to do requirements analysis, use cases, and drawing up plans including component and class diagrams.</p><p>I personally wrote the majority of the code base, and along the way I had to come up with custom solutions to problems apparent with built in APIs. For example, the swipe gesture used to make the character jump initially used a UIGestureRecognizer. However this introduced problems where some swipes would be ignored, especially when moving the character with another finger, so I had to custom build an entire touch-detection system from the ground up, which fixed the problem and allowed a higher degree of control over the swipe parameters.</p><p>In the end, I learned a new programming language, a new 2D game API (SpriteKit), and expanded my teamwork and leadership skills, whilst having a lot of fun.</p>"
 			}	],
 		"minor":
 		[	{
-				"name" : "Project Am",
-				"link" : "http://google.com/",
+				"name" : "Untapped Wines Grid Generator",
+				"link" : "http://webapps.untappedwines.net/grid-gen/index.html",
 				"format" : "Individual",
 				"languages" : ["Javascript", "HTML/CSS"],
 				"technologies" : ["AngularJS"],
-				"description" : ""
+				"description" : "<p>I developed this simple webapp in response to a problem where others in the business would try to add to pages on the Untapped Fine Wines retail website. In order to preserve the layout of certain pages, HTML would have to be directly pasted into the WYSIWYG editor, which was problematic as other employees were not versed in HTML.</p><p>Coded in AngularJS, two-way binding automatically fills a rendered representation of an event, a contact, or a news article entry, along with the bare HTML from a form. Clicking on the HTML selects it, allowing the user to simply copy and paste the HTML into the WYSIWYG editor, preventing any strange formatting errors and alleviating any confusion with the markup.</p>"
 			},
 			{
-				"name" : "Project Bm",
+				"name" : "Random Fractal Landscape Generator",
 				"link" : "http://google.com/",
 				"format" : "Individual",
-				"languages" : ["Javascript", "HTML/CSS"],
-				"technologies" : ["AngularJS"],
-				"description" : ""
+				"languages" : ["C#"],
+				"technologies" : ["DirectX", "XNA", "SharpDX", "Microsoft Visual Studio"],
+				"description" : "<p>This project was my first foray into 3D graphics.</p><p>This application is coded in C# and utilises the Diamond-Square algorithm to randomly generate a fractal landscape, which means you get a completely new landscape with each run. The landscape is coloured to resemble mountains, valleys, and lakes, depending on the height of the vectors. A single plane of semi-transparent water sits underneath to give a more realistic appearance as well.</p><p>As well as the landscape, a sunset/sunrise effect loops, utilising the Blinn-Phong illumination model and a directional light to give realistic reflections on the landscape.</p><p>Camera controls were also implemented to allow the user to use the mouse and keyboard to move the camera around the landscape to see it from different angles.</p><p>The lighting was challenging to get right. A point light source would have made for a realistic \"sun\", but coding a point light was beyond the scope of the project. So I had to make do with a directional light, but as only an angle, not a position, can be set on a directional light, I had to get creative.</p><p>Given that I could not move the light around the landscape, like a sun, I instead opted to move the entire landscape around the light, as shown below.</p><img src=\"\"/><p>This also meant I had to move the camera (aka the world) in order to keep it in the same position relative to the landscape. This was a novel solution that meant the lighting was realistic, without a significant frame-rate drop</p><p>I learned a lot about vectors, LH and RH winding, lighting, and transformation matrices from this project, which has greatly improved my understanding of game design and computer graphics.</p>"
 			}	]
 	}
 	
