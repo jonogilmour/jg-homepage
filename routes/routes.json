@@ -5,6 +5,10 @@
 		"layout" : "index"
 	},
 	"about" : "about",
+	"work" : {
+		"data" : "data/works.json",
+		"view" : "work"
+	},
 	"_404" : "404",
 	"redirect-test" : {
 		"redirect" : true,

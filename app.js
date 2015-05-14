@@ -28,7 +28,8 @@ var options = {
 	defaultLayout: "index",
 	extname: "html",
 	partialsDir: path.join(__dirname, "views", "partials/"),
-	layoutsDir: path.join(__dirname, "views", "layouts/")
+	layoutsDir: path.join(__dirname, "views", "layouts/"),
+	helpers: require("./hbs/helpers")
 };
 var exphbs  = require('express-handlebars');
 app.engine(options.extname, exphbs(options));

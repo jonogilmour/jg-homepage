@@ -17,55 +17,39 @@ describe("Routing", function() {
 		})
 	});
 	
-	// Navigation Links
-	it("nav bar links should return status 200", function(done) {
-		request(app)
-		.get("/")
-		.expect(200)
-		.end(function(err, res) {
-			if(err) throw err;
-			console.log("\t- / passed");
-			request(app)
-			.get("/about")
-			.expect(200)
-			.end(function(err, res) {
-				if(err) throw err;
-				console.log("\t- /about passed");
-				done();
-			});
-		});
-	});
-	
-	// Front Page
-	it("front page detail panel links should return status 200 (eg /work, /history, /about)", function(done) {
+	// Work Page
+	it("/work should return status 200", function(done) {
 		request(app)
 		.get("/work")
 		.expect(200)
 		.end(function(err, res) {
 			if(err) throw err;
-			console.log("\t- /work passed");
-			
-			request(app)
-			.get("/history")
-			.expect(200)
-			.end(function(err, res) {
-				if(err) throw err;
-				console.log("\t- /history passed");
-				
-				request(app)
-				.get("/about")
-				.expect(200)
-				.end(function(err, res) {
-					if(err) throw err;
-					console.log("\t- /about passed");
-					
-					done();	
-				});
-			});
+			done();
 		});
 		
+	});
+	
+	// History Page
+	it("/history should return status 200", function(done) {
+		request(app)
+		.get("/history")
+		.expect(200)
+		.end(function(err, res) {
+			if(err) throw err;
+			done();
+		});
 		
-		
+	});
+	
+	// About Page
+	it("/about should return status 200", function(done) {
+		request(app)
+		.get("/about")
+		.expect(200)
+		.end(function(err, res) {
+			if(err) throw err;
+			done();
+		});
 		
 	});
 	
@@ -77,6 +61,17 @@ describe("Routing", function() {
 		.end(function(err, res) {
 			if(err) throw err;
 			res.header["location"].should.containEql("about");
+			done();	
+		})
+	});
+	
+	// Media
+	it("sample image should return 200", function(done) {
+		request(app)
+		.get("/media/sample.jpg")
+		.expect(200)
+		.end(function(err, res) {
+			if(err) throw err;
 			done();	
 		})
 	});
