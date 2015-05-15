@@ -31,9 +31,10 @@
 	$lg-screen-min: 1200px;
 	$xs-screen-text: 14px;
 	
-	// Backgrounds
-	$warning-colour: #dd5757;
-	$warning-light-colour: #E26D6D;
+	// Colours
+	$red-colour: #dd5757;
+	$red-light-colour: #E26D6D;
+	$red-dark-colour: #ab0505;
 	$happy-colour: #3ACEF2;
 	$success-colour: #69D76D;
 	$default-colour: #666;
@@ -46,7 +47,7 @@
 	$green-med-light-colour: #489846;
 	$green-light-colour: #57A055;
 	
-	// Text
+	// Greys
 	$light-colour: #fff;
 	$med-light-colour: #999;
 	$med-colour: #666;
@@ -162,7 +163,7 @@ span {
 }
 
 .jg-project {
-	background-color: $warning-light-colour;
+	background-color: $red-light-colour;
 	color: $light-colour;
 	padding-top: 20px;
 	padding-bottom: 30px;
@@ -246,6 +247,62 @@ span {
 	}
 }
 
+.jg-history-pre {
+	color: $light-colour;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 2px solid $default-colour;
+	
+	h1 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	h2 {
+		margin-top: 5px;
+		margin-bottom: 0;
+		font-size: 18px;
+	}
+	
+	&.jg-education {
+		background-color: $red-light-colour;
+		h1 {
+			color: $light-colour;
+		}
+	}
+	&.jg-jobs {
+		background-color: $teal-light-colour;
+		h1 {
+			color:  $happy-colour;
+		}	
+	}
+}
+
+.jg-job {
+	color: $light-colour;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	
+	h2 {
+		font-size: 24px;
+		margin-top: 0;
+	}
+	
+	&.jg-odd {
+		background-color: $teal-colour;
+	}
+	
+	&.jg-even {
+		background-color: $teal-light-colour;
+	}
+	
+	#jg-responsibilities {
+		ul {
+			padding-left: 1em;
+		}
+	}
+}
+
 .active {
 	background-color: #707070;
 }
@@ -294,7 +351,7 @@ span {
 }
 
 #jg-work-banner {
-	background-color: $warning-colour;
+	background-color: $red-colour;
 	padding: 30px 0;
 }
 
@@ -308,11 +365,11 @@ span {
 	#jg-work-panel {
 		
 		@media screen and (max-width: $xs-screen-max) {
-			background-color: $warning-colour;
+			background-color: $red-colour;
 		}
 		
 		&:hover {
-			background-color: $warning-colour;
+			background-color: $red-colour;
 		}
 	}
 	
@@ -418,7 +475,7 @@ span {
 }
 
 #jg-404 {
-	background-color: $warning-colour;
+	background-color: $red-colour;
 	h1 {
 		color: #fff;
 		font-size: 110px;
@@ -429,9 +486,8 @@ span {
 }
 
 #jg-education {
-	background-color: $warning-colour;
+	background-color: $red-colour;
 	color: $light-colour;
-	border-top: 2px solid $default-colour;
 	padding-bottom: 30px;
 	/* Column height fix */
 	overflow: hidden;
@@ -466,17 +522,17 @@ span {
 	
 	@media screen and (min-width: $sm-screen-min) {
 		.jg-left {
-			border-right: 1px solid $default-colour;
+			border-right: 1px solid $red-light-colour;
 		}
 		
 		.jg-right {
-			border-left: 1px solid $default-colour;			
+			border-left: 1px solid $red-light-colour;			
 		}
 	}
 	
 	@media screen and (max-width: $xs-screen-max) {
 		.jg-right {
-			background-color: $warning-light-colour;
+			background-color: $red-light-colour;
 		}
 	}
 }

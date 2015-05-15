@@ -19,16 +19,18 @@
 		{
 			"company" : "Untapped Fine Wines",
 			"title" : "IT Manager",
-			"format" : "Full/Part Time",
+			"format" : "Full/Part-time",
 			"date" : "2011-Present",
-			"description" : ""
+			"responsibilities" : ["Web developer", "Responsible for the entire company's IT infrastructure", "Maintaining a fleet of computers and mobile devices", "Developing and deploying programs to assist business processes", "Regular creation of marketing materials (EDMs)", "Product photographer", "Graphic designer"],
+			"description" : "<p>I was present when the company began in 2011, and since then the business has grown from just a few employees to a team of over twenty people, including those interstate in NSW, QLD, and WA, and overseas at our South American office. As the company has grown, so has its IT requirements, and it has been my responsibility to manage the company's entire IT infrastructure.</p><p>Each employee has a laptop and phone that I have to oversee and manage, in addition to maintaining the company's email system and web hosting servers (offsite).</p><p>I built the company's website, hosted on the BigCommerce ecommerce platform, and have recently been responsible for moving platforms to Magento, based on a VPS hosting server. In developing the initial site, I was responsible for the entire process, including planning the initial design, styling using HTML and CSS, adding functional components using Javascript and JQuery, and importing all the original data (including photographing products).</p><p>Outside of web development, I am involved in the management and marketing of the business, working closely with other managers to set promotions, design EDMs, and improve conversion rates. I also develop web-apps and other programs to streamline internal business processes.</p><p>I worked part-time during university, and full-time during holiday periods.</p>"
 		},
 		{
 			"company" : "Ansett Aviation Training",
 			"title" : "Administrative Assistant",
-			"format" : "Part Time",
+			"format" : "Part-time",
 			"date" : "2008-2010",
-			"description" : ""
+			"responsibilities" : ["Setting up of computers, installing software and operating systems", "Organisation of conference room technology", "Database work using Microsoft Access",	"Website work including instructional videos and enhancements",	"Customer liaison",	"Reception work"],
+			"description" : "<p>In this job I served a multitude of roles, which included everything from data-entry to maintenance of the premises.</p><p>I was responsible for painting a large portion of the building interior, clearing out storage rooms, and setting up computer systems and software for employee use.</p><p>I also worked in the kitchen, serving coffee and refreshments to customers, and in the reception as an administrative assistant.</p>"
 		}
 	],
 	"dev" : 		[

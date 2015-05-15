@@ -1,5 +1,4 @@
-<section id="jg-work" class="row">
-	{{#evenOdd}}
-		{{> 2col}}
-	{{/evenOdd}}
-</section>
+{{> render/history/heading class="jg-jobs" title="Professional Experience" description=""}}
+{{#evenOdd this classes="" even="jg-even" odd="jg-odd"}}
+	{{> render/history/sub/work-entry}}
+{{/evenOdd}}
