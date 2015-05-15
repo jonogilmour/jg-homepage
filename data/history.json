@@ -3,14 +3,16 @@
 		{
 			"institution" : "The University of Melbourne",
 			"title" : "BSc (Computing and Software Systems)",
+			"date" : 2014,
 			"subjects" : ["IT Project", "Graphics and Interaction", "Informatics (1, 2, and 3)", "Software Modeling and Design", "Computer Systems", "Declarative Programming"],
-			"description" : ""
+			"description" : "<p>My degree involved a good mixture of subjects from both Computer Science and Software Engineering disciplines.</p><p>Project work, especially when programming using unfamiliar concepts, was the most enjoyable part of my degree. For example, in my final semester I had to concurrently manage two teams creating a mobile app and a 3D game in DirectX, two areas I had zero previous experience in. To go from knowing very little about the technologies to making functional applications in a matter of weeks was very rewarding, and the team-based project work greatly improved my skills in developing applications with others, especially in a high pressure situation with looming deadlines.</p><p>One other key area I greatly improved is in my ability to work, and learn, autonomously by myself. I would often take the topics, languages, and concepts touched on in classes and explore them on my own, teaching myself the programming languages along the way. In fact, very little of my actual programming ability was actually learned at university, as I prefer to learn-by-doing whilst teaching myself, rather than the usual approach of, \"Learn, then do.\"</p><p>Despite my excellent scores in project work, I was often let down by my exam marks, which resulted in lower scores than I expected. Nonetheless, I have focused my efforts on improving my practical skills in both web development and programming in general, and the breadth of my project work is an indicator of that.</p>"
 		},
 		{
 			"institution" : "Brighton Grammar School",
 			"title" : "VCE",
+			"date" : 2010,
 			"subjects" : ["Mathematical Methods", "Biology", "Japanese", "Business Management", "English"],
-			"description" : ""
+			"description" : "<p>During my time at school I was a member of the concert band percussion section, achieved a Silver level in the Duke of Edinburgh award, and was a part of the army cadet program.</p><p>I was also chosen to participate in the gifted learning program.</p><p>In 2009 I was part of a small group that embarked on a two-week exchange to Japan. This trip allowed me to expand my skills in Japanese, but also to soak up the Japanese culture as well. I stayed with a Japanese family and attended school in Tokyo, before travelling to Kyoto and Hiroshima.</p>"
 		}
 	],
 	"jobs" : 		[
