@@ -8,11 +8,11 @@
 </main>
 
 {{> render/work/heading class="major" title="Major" description="Larger scale projects with significant time investment"}}
-{{#evenOdd works.major classes="major"}}
+{{#evenOdd works.major classes="major" even="jg-even" odd="jg-odd"}}
 	{{> render/work/project}}
 {{/evenOdd}}
 
 {{> render/work/heading class="minor" title="Minor" description="Smaller scale projects focusing on a few key concepts"}}
-{{#evenOdd works.minor classes="minor"}}
+{{#evenOdd works.minor classes="minor" even="jg-even" odd="jg-odd"}}
 	{{> render/work/project}}
 {{/evenOdd}}

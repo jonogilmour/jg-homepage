@@ -9,6 +9,10 @@
 		"data" : "data/works.json",
 		"view" : "work"
 	},
+	"history" : {
+		"data" : "data/history.json",
+		"view" : "history"
+	},
 	"_404" : "404",
 	"redirect-test" : {
 		"redirect" : true,

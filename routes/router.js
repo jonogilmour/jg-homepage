@@ -44,7 +44,7 @@ router.route("/:page")
 			res.redirect(status, page.target)
 		}
 		// Page Receives JSON Data
-		else if(page.data) {
+		else if(page.data && typeof page.data === "string" && page.data.length) {
 			var layoutFile = routeMap.default_layout;
 			if(page.layout) layoutFile = page.layout;
 			// Read data file
@@ -62,7 +62,15 @@ router.route("/:page")
 		}
 		else {
 			if (typeof page === "object") {
-				res.render(page.view, {layout: page.layout});
+				var layout;
+				if(page.layout) {
+					layoutFile = page.layout;
+				}
+				else {
+					layoutFile = routeMap.default_layout;
+				}
+				
+				res.render(page.view, {layout: layoutFile});
 			}
 			else {
 				res.render(page, {layout: routeMap.default_layout});

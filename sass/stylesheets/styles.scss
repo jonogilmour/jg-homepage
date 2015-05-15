@@ -1,3 +1,26 @@
+// test
+.left {
+	border-right: 1px solid #333;
+	border-left: 1px solid #333;
+}
+.right {
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+}
+.bounds-red {
+	border-left: 1px solid #f01616;
+	border-right: 1px solid #f01616;
+}
+.bounds-blue {
+	border-left: 1px solid #2236e9;
+	border-right: 1px solid #2236e9;
+}
+.bounds-green {
+	border-left: 1px solid #1de52c;
+	border-right: 1px solid #1de52c;
+}
+
+
 /* Variables */
 	// Pixel values
 	$xs-screen-max: 767px;
@@ -42,19 +65,19 @@
 
 /* Disable navbar collapse */
 .navbar-collapse.collapse {
-display: block!important;
+	display: block!important;
 }
 
 .navbar-nav>li, .navbar-nav {
-float: left !important;
+	float: left !important;
 }
 
 .navbar-nav.navbar-right:last-child {
-margin-right: -15px !important;
+	margin-right: -15px !important;
 }
 
 .navbar-right {
-float: right!important;
+	float: right!important;
 }
 
 /* Elements */
@@ -66,6 +89,10 @@ body {
 footer {
 	padding: 30px 0;
 	color: #f3f3f3;
+	
+	p {
+		margin: 0;
+	}
 	
 	#social {
 		border-left: 1px solid #333;
@@ -107,7 +134,7 @@ span {
 	color: $light-colour;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	border-top: 2px solid rgb(77, 77, 77);
+	border-top: 2px solid $default-colour;
 	
 	h1 {
 		margin-top: 0;
@@ -162,6 +189,10 @@ span {
 	
 	h1 {
 		margin-bottom: 0;
+		
+		@media screen and (max-width: $xs-screen-max) {
+			text-align: center;
+		}
 	}
 	
 	h2 {
@@ -189,16 +220,27 @@ span {
 	}
 	
 	#jg-project-link {
-		margin-bottom: 10px;
-		margin-top: 3px;
+		margin-bottom: 15px;
+		margin-top: 15px;
+		
+		@media screen and (max-width: $xs-screen-max) {
+			text-align: center;
+		}
 		
 		.btn {
-			color: #333;
-			background-color: #fff;
+			color: #FFF;
+			background-color: #3D3D3D;
 			border-color: none;
 			
 			&:hover {
-				background-color: #DDD;
+				background-color: #5f5f5f;
+			}
+			
+			@media screen and (max-width: $xs-screen-max) {
+				width: 70%;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				font-size: 15px;
 			}
 		}
 	}
@@ -213,9 +255,7 @@ span {
 	padding-top: 50px;
 }
 
-#jg-main-banner, #jg-work-banner {
-	background-color: $happy-colour;
-	padding: 30px 0;
+#jg-main-banner, #jg-work-banner, #jg-history-banner {
 	color: $light-colour;
 	
 	h1 {
@@ -229,6 +269,18 @@ span {
 	
 	#jg-btn {
 		margin-top: 15px;
+		color: #fff;
+		background-color: #337ab7;
+		
+		&:hover {
+			background-color: #135893;
+		}
+		
+		&:active {
+			box-shadow: none;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+		}
 		
 		@media screen and (max-width: $xs-screen-max) {
 			font-size: $xs-screen-text;
@@ -236,8 +288,19 @@ span {
 	}
 }
 
+#jg-main-banner {
+	padding: 80px 0;
+	background-color: $happy-colour;
+}
+
 #jg-work-banner {
 	background-color: $warning-colour;
+	padding: 30px 0;
+}
+
+#jg-history-banner {
+	background-color: $safe-colour;
+	padding: 30px 0;
 }
 
 #jg-home-panels {
@@ -300,9 +363,9 @@ span {
 
 #jg-main-nav {
 	background-color: $default-colour;
+	border: none;
 	
 	@media screen and (max-width: $xs-screen-max) {
-		border: none;
 		min-height: 0px;
 	}
 	
@@ -322,6 +385,7 @@ span {
 			a {
 				@media screen and (max-width: $xs-screen-max) {
 					padding-top: 14px;
+					height: 100%;
 				}
 			}
 		}	
@@ -361,6 +425,54 @@ span {
 	}
 	h2 {
 		color: #fff;
+	}
+}
+
+#jg-education {
+	background-color: $warning-colour;
+	color: $light-colour;
+	border-top: 2px solid $default-colour;
+	padding-bottom: 30px;
+	/* Column height fix */
+	overflow: hidden;
+	
+	h1 {
+		margin-bottom: 0;
+		font-size: 32px;
+	}
+	
+	h2 {
+		margin-top: 5px;
+		margin-bottom: 0;
+		font-size: 20px;
+	}
+	
+	h3 {
+		margin-top: 20px;
+		font-size: 16px;
+	}
+	
+	.jg-left, .jg-right {
+		padding-top: 30px;
+		/* Column height fix */
+		margin-bottom: -100%;
+		padding-bottom: 100%;
+	}
+	
+	@media screen and (min-width: $sm-screen-min) {
+		.jg-left {
+			border-right: 1px solid $default-colour;
+		}
+		
+		.jg-right {
+			border-left: 1px solid $default-colour;			
+		}
+	}
+	
+	@media screen and (max-width: $xs-screen-max) {
+		.jg-right {
+			background-color: $warning-light-colour;
+		}
 	}
 }
 
