@@ -6,6 +6,13 @@ try {
 	console.log(e);
 }
 
+/*
+	Checks if a string exists and is not empty
+*/
+function checkString(str) {
+	return str && typeof str === "string" && str.length;
+}
+
 
 module.exports = {
 	/*
@@ -13,7 +20,7 @@ module.exports = {
 		@param String
 	*/
 	image: function(name) {
-		if (name === "string" && name.length) {
+		if (typeof name === "string" && name.length) {
 			var mediaFolder = pathsMap.media;
 			return path.join(mediaFolder, name);
 		}
@@ -25,14 +32,18 @@ module.exports = {
 		@param Array
 	*/
 	comma: function(strs) {
-		var list = "";
-		var i = 0;
-		var max = strs.length - 1;
-		while(true) {
-			if(i == max) return list + strs[i];
-			list = list + strs[i] + ", ";
-			i++;
+		if(strs && strs.constructor === Array && strs.length) {
+			var list = "";
+			var i = 0;
+			var max = strs.length - 1;
+			while(true) {
+				if(typeof strs[i] !== "string") return "comma-error";
+				if(i == max) return list + strs[i];
+				list = list + strs[i] + ", ";
+				i++;
+			}
 		}
+		return "comma-error";
 	},
 	/*
 		Takes a list and iterates over it, and adds a different class for even or odd blocks
@@ -77,10 +88,36 @@ module.exports = {
 		Turn each item in a list into an li
 	*/
 	list: function(items) {
-		var htmlOut = ""
-		items.forEach(function(item) {
-			htmlOut += "<li>" + item + "</li>";	
-		});
-		return htmlOut;
+		if(items && items.constructor === Array) {
+			var htmlOut = ""
+			items.every(function(item) {
+				if(typeof item === "object") {
+					htmlOut = "list-error";
+					return false;
+				}
+				htmlOut += "<li>" + item + "</li>";	
+			});
+			return htmlOut;
+		}
+		return "list-error";
+	},
+	/*
+		Takes an item object
+	*/
+	link: function(item) {
+		if (item && checkString(item.url)) {
+			var htmlOut = "<a href=\"";
+			htmlOut += item.url + "\" target=\"_blank\">";
+			
+			if(checkString(item.name)) {
+				htmlOut += item.name;
+			}
+			else {
+				htmlOut += "Click here";
+			}
+			
+			return htmlOut + "</a>";
+		}
+		return "link-error";
 	}
 } 
