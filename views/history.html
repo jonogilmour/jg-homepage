@@ -5,7 +5,7 @@
 		<p>You'll also find the technologies I'm familiar with, sorted into categories according to exprience</p>
 	</div>
 </main>
-{{> render/history/education education}}
-{{> render/history/work jobs}}
-{{!> render/history/development dev}}
-{{!> render/history/other other}}
+{{> render/history/education this.education}}
+{{> render/history/work this.jobs}}
+{{> render/history/development this.dev}}
+{{> render/history/other this.other}}

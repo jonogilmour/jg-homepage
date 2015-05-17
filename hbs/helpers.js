@@ -96,6 +96,7 @@ module.exports = {
 					return false;
 				}
 				htmlOut += "<li>" + item + "</li>";	
+				return true;
 			});
 			return htmlOut;
 		}

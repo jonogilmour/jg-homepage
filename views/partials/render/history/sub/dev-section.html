@@ -1,0 +1,6 @@
+<div class="jg-dev-category row {{this.even_odd}}">
+	<h1 id="jg-level" class="col-xs-10 col-xs-offset-1">{{this.level}}</h1>
+	{{#each this.dev}}
+		{{> render/history/sub/dev-entry}}
+	{{/each}}
+</div>

@@ -7,6 +7,7 @@ var path = require("path");
 var http = require("http");
 
 // Router engine
+var routeMap = require("./routes/routes.json"); // Cache the routemap
 app.use(require("./routes/router"));
 
 // SASS engine
@@ -35,6 +36,16 @@ var exphbs  = require('express-handlebars');
 app.engine(options.extname, exphbs(options));
 app.set('view engine', options.extname);
 app.set("views", path.join(__dirname, "/views"));
+
+//404 and 500 routes
+ app.use(function(req, res) {
+    res.status(404).render(routeMap._404, {layout: routeMap.default_layout});
+ });
+ 
+ // Handle 500
+ app.use(function(error, req, res, next) {
+    res.status(500).render(routeMap._500, {layout: routeMap.default_layout});
+ });
 
 // Start server
 var server = http.createServer(app).listen(process.env.PORT || 3000);

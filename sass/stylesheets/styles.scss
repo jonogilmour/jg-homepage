@@ -39,7 +39,8 @@
 	$success-colour: #69D76D;
 	$default-colour: #666;
 	$safe-colour: #41AB45;
-	$purple-colour: #8B3EC8;
+	$purple-colour: #663D67;
+	$purple-light-colour: #784D79;
 	$teal-colour: #22698E;
 	$teal-med-light-colour: #2E769B;
 	$teal-light-colour: #3185b1;
@@ -103,6 +104,7 @@ footer {
 
 h1 {
 	margin-top: 12px;
+	word-wrap: break-word;
 }
 
 main {
@@ -113,6 +115,10 @@ span {
 	&.pre {
 	  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	}
+}
+
+li {
+	  margin-top: 4px;
 }
 
 /* Classes */
@@ -276,6 +282,18 @@ span {
 			color:  $light-colour;
 		}	
 	}
+	&.jg-dev {
+		background-color: $purple-light-colour;
+		h1 {
+			color:  $light-colour;
+		}	
+	}
+	&.jg-others {
+		background-color: $green-light-colour;
+		h1 {
+			color:  $light-colour;
+		}	
+	}
 }
 
 .jg-job {
@@ -286,6 +304,12 @@ span {
 	h2 {
 		font-size: 24px;
 		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	
+	h3 {
+		margin-top: 0;
+		font-size: 20px;
 	}
 	
 	&.jg-odd {
@@ -294,6 +318,38 @@ span {
 	
 	&.jg-even {
 		background-color: $teal-light-colour;
+	}
+	
+	#jg-responsibilities {
+		ul {
+			padding-left: 1em;
+		}
+	}
+}
+
+
+.jg-other {
+	color: $light-colour;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	
+	h2 {
+		font-size: 24px;
+		margin-top: 0;
+		margin-bottom: 20px;
+	}
+	
+	h3 {
+		margin-top: 0;
+		font-size: 20px;
+	}
+	
+	&.jg-odd {
+		background-color: $green-colour;
+	}
+	
+	&.jg-even {
+		background-color: $green-light-colour;
 	}
 	
 	#jg-responsibilities {
@@ -485,6 +541,17 @@ span {
 	}
 }
 
+#jg-500 {
+	background-color: $teal-colour;
+	h1 {
+		color: #fff;
+		font-size: 110px;
+	}
+	h2 {
+		color: #fff;
+	}
+}
+
 #jg-education {
 	background-color: $red-colour;
 	color: $light-colour;
@@ -536,6 +603,53 @@ span {
 		}
 	}
 }
+
+#jg-dev {
+	.jg-dev-category {
+		color: $light-colour;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		
+		
+		
+		&.jg-odd {
+			background-color: $purple-colour;
+		}
+		
+		&.jg-even {
+			background-color: $purple-light-colour;
+		}
+		
+		.jg-dev-entry {
+			
+			#jg-projects, #jg-description {
+				margin-top:  10px;
+			}
+			
+			h2 {
+				font-size: 28px;
+				margin-top: 15px; 
+			}
+			
+			#jg-dev-info {
+				
+				margin-top: 10px;
+				
+				#jg-projects {
+					
+					h3 {
+						margin-top: 0;
+						font-size: 20px;
+					}
+					ul {
+						padding-left: 1em;
+					}
+				}
+			}
+		}
+	}
+}
+
 
 /* Media specific */
 

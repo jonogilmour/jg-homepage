@@ -51,10 +51,16 @@ router.route("/:page")
 			fs.readFile(path.join(__dirname, "..", page.data), function(err, data) {
 				if(err) {
 					console.log(err);
-					res.redirect("404");
+					res.status(404).render(routeMap._404, {layout: routeMap.default_layout});
+					return;
 				}
 				else {
-					var data = JSON.parse(data);
+					try {
+						var data = JSON.parse(data);
+					} catch (err) {
+						console.log(err);
+						res.status(500).render(routeMap._500, {layout: routeMap.default_layout});
+					}
 					res.render(page.view, data);
 				}
 			});
@@ -96,6 +102,11 @@ router.route("/:page")
 	}
 	
 });
+/*
+router.use(function(req, res) {
+	console.log("hit 404");
+	res.status(404).render(routeMap._404, {layout: routeMap.default_layout});
+})*/
 
 /////////////////////////////////////////
 

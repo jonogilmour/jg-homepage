@@ -14,9 +14,10 @@
 		"view" : "history"
 	},
 	"_404" : "404",
+	"_500" : "500",
 	"redirect-test" : {
 		"redirect" : true,
 		"status" : 302,
 		"target" : "about"
-	} 
+	}
 }

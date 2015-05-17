@@ -1,23 +1,23 @@
-<section class="row jg-project {{classes}} {{even_odd}}">
-	<h1 id="jg-project-name" class="col-xs-10 col-xs-offset-1">{{name}}</h1>
+<section class="row jg-project {{this.classes}} {{this.even_odd}}">
+	<h1 id="jg-project-name" class="col-xs-10 col-xs-offset-1">{{this.name}}</h1>
 	<div id="jg-project-link" class="col-xs-10 col-xs-offset-1">
-		<a class="btn btn-sm" href="{{link}}" target="_blank">See Project</a>
+		<a class="btn btn-sm" href="{{this.link}}" target="_blank">See Project</a>
 	</div>
 	<div id="jg-project-info" class="container-fluid">
 		<div class="row">
 			<div class="col-xs-9 col-sm-4 col-md-2 col-xs-offset-1">
-				<h2 id="jg-size">{{format}}</h2>
+				<h2 id="jg-size">{{this.format}}</h2>
 				<div id="jg-lang">
 					<p>
-						{{comma languages}}
+						{{comma this.languages}}
 					</p>
 					<p>
-						{{comma technologies}}
+						{{comma this.technologies}}
 					</p>
 				</div>
 			</div>
 			<div id="jg-description" class="col-xs-10 col-sm-6 col-md-8 col-xs-offset-1 col-sm-offset-0">
-				{{{description}}}
+				{{{this.description}}}
 			</div>
 		</div>
 	</div>

@@ -34,9 +34,189 @@
 		}
 	],
 	"dev" : 		[
-		
+		{
+			"level" : "Advanced - Signficant experience",
+			"dev" : [
+				{
+					"language" : "C",
+					"projects" : [
+						"ntohing asdas dasd asda sda sd as a  asdasdasda asda asd",
+						"yep"
+					],
+					"description" : "<p>My first attempt at computer programming was when I had just turned 14. I did a Google search on programming languages and found C, which ended up being the best first programming language for me.</p><p>The complex structure of C introduced me to concepts like memory management, pointers, references, and more. Although I didn't understand a lot of it at first, being thrown into the deep end first meant that learning higher-level languages (such as Python) was significantly easier for me.</p><p>The vast majority of my complex algorithm and data structure work has been in C, and although it's not my go-to language, it's one I'm extremely confident in using.</p><p>Given that C is very complex and strictly typed, it set habits like triple-checking code, diligent testing, and adhering to a cohesive structure that has aided me throughout my development as a programmer.</p>"
+				},
+				{
+					"language" : "HTML",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "CSS",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Javascript",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Git",
+					"projects" : [
+						
+					],
+					"description" : ""
+				}
+			]
+		},
+		{
+			"level" : "Intermediate - Practical experience",
+			"dev" : [
+				{
+					"language" : "NodeJS",
+					"projects" : [
+						
+					],
+					"description" : "<p>My initial foray into Node started when I was searching for a good alternative to PHP and the LAMP stack. I found PHP to be a messy language, having tackled several PHP projects before. The prevalence of mixing logic into your markup never really worked for me at all.</p><p>I came across Node, and found its syntax to be neat, simple, and intuitive, and its even-driven, single-thread design beats dealing with multithreading issues and is indicative of a modern trend of leaning towards simplicity and speed. Javascript has always been one of my favourite languages, certainly in my top three, so to be able to focus on just one syntax across the front and back ends of a system saves a lot of headaches, and sharing of code cuts development time too.</p><p>Frameworks like Express make it easy to get a server up and running, but I find the real power of Node lies in its scalability. Although I'm just in my beginning stages of using Node, I find MEAN is a suitable alternative to LAMP, and in my mind it is a superior one too!</p>"
+				},
+				{
+					"language" : "Python",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "C++",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Objective-C",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "SQL",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Swift",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "JQuery",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Bootstrap",
+					"projects" : [
+						
+					],
+					"description" : ""
+				}
+			]
+		},
+		{
+			"level" : "Basic - Some experience",
+			"dev" : [
+				{
+					"language" : "Ruby",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Haskell",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Java",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Prolog",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "AngularJS",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "PHP",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "C#",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "MIPS Assembler",
+					"projects" : [
+						
+					],
+					"description" : ""
+				},
+				{
+					"language" : "Mocha",
+					"projects" : [
+						
+					],
+					"description" : ""
+				}
+			]
+		}
 	],
 	"other" : 		[
-		
+		{
+			"title" : "Pentorium Blog (www.pentorium.com)",
+			"sub_title" : "Owner and Creator",
+			"responsibilities" : ["Worked directly with international brands (including Kaweco, Massdrop, Monsieur Notebook, and JustWrite) to test and review products", "Regular content creation for blog and YouTube channel", "Regular posting on social network channels (Twitter, Facebook)", "Selling/trading of products"],
+			"description" : "Did some stuff"
+		},
+		{
+			"title" : "Photographer",
+			"sub_title" : "Professional and freelance work",
+			"responsibilities" : ["Paid portraiture sessions for local businesses", "Event photographer, including weddings and parties", "Product photography", "Fashion photographer for www.confettiavenue.com"],
+			"description" : ""
+		}
 	]
 }

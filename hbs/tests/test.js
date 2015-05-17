@@ -133,7 +133,7 @@ describe("list(items)", function() {
 	 	done();
 	 });
 	 it("should return a string of the form '<li>hello</li>' (repeated for each element) when an array is passed in", function(done) {
-	 	list(["hello", "yes", 5]).should.match(/^(<li>.+<\/li>)+$/);
+	 	list(["hello", "yes", 5]).should.match(/^(<li>.+<\/li>){3}$/);
  		done();
 	 });
 	 it("should return an empty string when an empty array is passed in", function(done) {

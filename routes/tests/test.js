@@ -76,5 +76,14 @@ describe("Routing", function() {
 		})
 	});
 	
-	
+	// 404 cascade
+	it("should 404 when an unspecified route is hit", function(done) {
+		request(app)
+		.get("/a/b/c/d/e/f/g/h/xxxx")
+		.expect(404)
+		.end(function(err, res) {
+			if(err) throw err;
+			done();	
+		})
+	});
 });
