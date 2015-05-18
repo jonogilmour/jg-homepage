@@ -35,13 +35,12 @@
 	],
 	"dev" : 		[
 		{
-			"level" : "Advanced - Signficant experience",
+			"level" : "Advanced - Significant experience",
 			"dev" : [
 				{
 					"language" : "C",
 					"projects" : [
-						"ntohing asdas dasd asda sda sd as a  asdasdasda asda asd",
-						"yep"
+						
 					],
 					"description" : "<p>My first attempt at computer programming was when I had just turned 14. I did a Google search on programming languages and found C, which ended up being the best first programming language for me.</p><p>The complex structure of C introduced me to concepts like memory management, pointers, references, and more. Although I didn't understand a lot of it at first, being thrown into the deep end first meant that learning higher-level languages (such as Python) was significantly easier for me.</p><p>The vast majority of my complex algorithm and data structure work has been in C, and although it's not my go-to language, it's one I'm extremely confident in using.</p><p>Given that C is very complex and strictly typed, it set habits like triple-checking code, diligent testing, and adhering to a cohesive structure that has aided me throughout my development as a programmer.</p>"
 				},
@@ -50,28 +49,43 @@
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>I write loads of HTML every day, and have done so for years, and am always interested in improving the way I structure my markup.</p><p>I turned my attention to HTML5 some time ago, having previously done a lot of work in (X)HTML4, and I'm always interested to see new developments in the HTML standards.</p>"
 				},
 				{
 					"language" : "CSS",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Despite the fact that CSS is not necessarily a programming language, there is so much to learn and so many tools to add to the toolkit that I still find myself discovering new things, especially in the CSS3 standard.</p><p>My current work involves integrating responsive design into my workflow, developing with a \"mobile-first\" mindset, and every change I make to my styling is thoroughly tested on both mobile and desktop browsers. As mobile web browsers now take a sizable portion of web traffic, it's important to make sure that the user experience on tablets and phones is just as compelling and functional as it is on the desktop.</p>"
 				},
 				{
 					"language" : "Javascript",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Javascript is such a ubiquitous language that I think I have written more Javascript than anything else, but it is rarely without using a plugin or framework of some sort.</p><p>Recently my attention has been devoted to AngularJS and NodeJS, two extraordinary frameworks that are a real indicator of the future of web development. However, despite my love for everything JS, I'm always well aware that utter reliance on client-side scripting is not really an option, so I make sure I do my web development with that in mind.</p><p>I am always impressed by what others are able to create with Javascript, and having elements of functional, OO, and procedural languages makes it easy to apply to almost any situation</p>"
 				},
 				{
 					"language" : "Git",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Having been forced to use SVN for the majority of my projects at university, Git was a breath of fresh air, and I now <span class=\"pre\">\"git commit\"</span> almost every day.</p><p>All of my current code is version controlled, and most of my past projects can be found on Github, so I have a lot of experience with git on both the command line and in GUIs like SourceTree and Github</p>"
+				},
+				{
+					"language" : "C++",
+					"projects" : [
+						
+					],
+					"description" : "<p>I have been using C++ on and off over the years, and it was my first proper object-oriented language, leading me to Python, Objective-C, and others.</p><p>Most of my C++ work has been on small to medium sized command-line programs, but in my final semester at university I took the opportunity to really get hands dirty and get into games development, using vanilla DirectX 11 to create a game for Windows 8.1 tablets.</p><p>Dynamically creating vector-based polygons, manipulating vertex and index buffers, and importing and configuring shaders were just a few of the things I learned on the project, and they were all done using C++.</p>"
+				},
+				
+				{
+					"language" : "Swift",
+					"projects" : [
+						
+					],
+					"description" : "<p>I began using Swift in mid-2014 in its beta form, and instantly fell in love with it. I like to think of Swift as taking the best parts of every language and putting them together, and despite some issues with bugs in the beta release, I thoroughly enjoyed learning and using it.</p><p>My final university project was an iOS game coded in Swift, but using APIs (Gamecenter, SpriteKit) that had not been fully ported from Objective-C. As such, I also had to learn to translate between Swift and Objective-C code, which improved my understanding of both languages.</p><p>As it stands, Swift is currently my favourite programming language, and I'm a regular contributor to Swift StackOverflow topics</p>"
 				}
 			]
 		},
@@ -90,49 +104,42 @@
 					"projects" : [
 						
 					],
-					"description" : ""
-				},
-				{
-					"language" : "C++",
-					"projects" : [
-						
-					],
-					"description" : ""
+					"description" : "<p>I learned Python early on, but could never really fall in love with its syntax and reliance on indents for its structure (I'm a curly-brace evangelist).</p><p>Nonetheless, I have done a lot of Python development over the years, from developing webservers with queries to SQLite databases, to writing and testing algorithms and developing small AES signature verification programs.</p>"
 				},
 				{
 					"language" : "Objective-C",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>I began toying with the idea of app development a couple of years ago, which started with me learning Objective-C.</p><p>The introduction of technologies like ARC have made Objective-C development easier than ever, and I still read and write Objective-C code when writing Swift apps using APIs that have not been ported to Swift, so it is a language that will be in my vocabulary for some time to come.</p>"
+				},
+				{
+					"language" : "SASS/SCSS",
+					"projects" : [
+						
+					],
+					"description" : "<p>Prior to encountering SASS, I had no idea that CSS preprocessors existed, or why they would exist at all.</p><p>Now, I write as much SCSS as I can, whenever I can, as I find it's a powerful tool that saves a lot of time, especially when using variables and mixins to change several blocks of CSS at once.</p><p>This site's stylesheets are processed from SCSS source using a SASS compiler, which is run whenever the source file is modified, and it has made the process of styling this site much, much easier than with regular CSS.</p>"
 				},
 				{
 					"language" : "SQL",
 					"projects" : [
 						
 					],
-					"description" : ""
-				},
-				{
-					"language" : "Swift",
-					"projects" : [
-						
-					],
-					"description" : ""
+					"description" : "<p>I've used MySQL or SQLite in any project where a database is required, and there are SQL query plugins for essentially every popular language and framework today.</p><p>Whilst I know the structure and function of SQL databases and have written many applications that use them, I have begun focus more on NoSQL databases that rely less on schema and rigid structuring of data, like Redis and MongoDB</p>"
 				},
 				{
 					"language" : "JQuery",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Like many web developers, I initially learned JQuery in order to make animations and CSS effects an easier task than using vanilla Javascript.</p><p>These days I use JQuery whenever I'm not writing AngularJS in the browser (and sometimes, even when I am).</p>"
 				},
 				{
 					"language" : "Bootstrap",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Bootstrap was a revelation when I first started learning it, and it introduced me to the world of responsive web design.</p><p>Now, I don't leave home without it, as they say. Every site I've built since learning it has incorporated Bootstrap's intuitive grid layout system and helpful styling classes inside and out, and I've also brought in the Javascript libraries to avoid writing extraneous code. In terms of tools in the web developer toolbox, Bootstrap is probably my favourite and most used.</p>"
 				}
 			]
 		},
@@ -144,63 +151,63 @@
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>I first used Ruby when I worked on a group projects, developing a Rails app with calls to an SQL database. I found Rails to be a fantastic time saver, and the wealth of available gems means writing modular, error free code is easy and fast. I focus more on NodeJS development now, but I'm well aware that Ruby is a huge part of modern web development, so it's one language I won't forget anytime soon.</p>"
 				},
 				{
 					"language" : "Haskell",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>My initial exposure to purely functional programming was with Haskell, and it really is a prime example of a functional language through and through.</p><p>I, like many other imperative developers, tried to write Haskell code with the same form and structure as my procedural code, which is obviously not the way to go. With some practice, though, I found that writing logic programs was easy in Haskell, certainly much easier than C or C++.</p><p>Whilst Haskell isn't a language I'll use often, it's been a great learning experience and also affected the way I think about my code in general.</p>"
 				},
 				{
 					"language" : "Java",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Java is one language I wish I could use more often, but it simply isn't very relevant to modern web development as it once was.</p><p>My first experience with Java was from reading Savitch's \"Absolute Java\", developing a top-down RPG game in the process, and I liked the clean syntax of the language, and the fact that it runs on anything with a runtime makes it an easy language to recommend for almost any project.</p>"
 				},
 				{
 					"language" : "Prolog",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Prolog involved a lot of head scratching, but once I figured out its decision-tree structure, I realised just how powerful it can be.</p><p>I developed an algorithm for solving crossword-esque puzzles, and it gave me a new understanding of how structuring a program properly can turn a problem with extreme complexity into one that's solved in milliseconds by shrinking the test set with intelligent filtering to produce a smaller decision tree. Prolog also aided my understanding of complexity, AI programming, and the \"guessing\" ability of computers with non-deterministic algorithms.</p>"
 				},
 				{
 					"language" : "AngularJS",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Despite my dislike for heavy reliance on client-side Javascript, AngularJS is just about the best framework for the job.</p><p>Development of webapps is made much easier with two-way binding, a robust native templating engine, and the ability to split your code to any degree you wish to create highly reusable modules. Now that web applications are becoming more and more ubiquitous, frameworks like Angular are becoming more relevant than ever, which is why I am focusing a large bulk of my attention to web development using Node and Angular together.</p>"
 				},
 				{
 					"language" : "PHP",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>I have mixed feelings about PHP. Whilst I don't doubt its relevance in today's web development scene (LAMP, for example), I find it to be a rather messy language that can get very complex, very fast, with a heavy reliance on mixing logic with markup that feels like a bit of a code smell.</p><p>I would sooner make an application using Node or Ruby, but my work has necessitated an exposure to a lot of PHP (Wordpress and Magento, for example), and as such I've had to learn a lot about the language at work and in personal side projects.</p>"
 				},
 				{
 					"language" : "C#",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>With so many languages involving the letter 'C', it's easy to get bogged down by minor differences in syntax, but C# is one language I actually quite enjoyed learning.</p><p>I learned C# and within a few days I developed my first 3D graphics application using SharpDX - a C# wrapper for DirectX. I found it easy to pick up, and it is certainly cleaner and easier to use than C++. Nonetheless, my work involves very little .NET, so I don't use it that often, but I do consider it one of Microsoft's better ideas.</p>"
 				},
 				{
 					"language" : "MIPS Assembler",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Assembler is something a lot of programmers simply haven't touched due to the plethora of languages available to learn, and if you aren't reverse engineering code or writing for embedded systems there seems to be little point in it.</p><p>I touched on MIPS in my second semester of university, where we had to write C programs to track the sequence of calls in a MIPS program and sort them into \"blocks\". Learning about assembler greatly expanded my knowledge of how everything in a computer works, from how human-readable-code is translated into machine code, and how CPU architectures are structured and how they compare to each other.</p>"
 				},
 				{
 					"language" : "Mocha",
 					"projects" : [
 						
 					],
-					"description" : ""
+					"description" : "<p>Having not done a whole lot of TDD outside of the odd assert statement in C programs, I was eager to begin learning how to write code that is well tested.</p><p>Mocha is a brilliant BDD framework written in Javascript that, when combined with natural-language assertion libraries like Should, allow for expressive and meaningful testing that saves a lot of frustration and cuts down on bugs.</p><p>I developed this site by employing BDD principles, by testing first, then coding to pass, then testing again. The result has been less unexpected results in my code, and a better understanding of how to write better, more concise code that degrades gracefully.</p>"
 				}
 			]
 		}
@@ -210,13 +217,19 @@
 			"title" : "Pentorium Blog (www.pentorium.com)",
 			"sub_title" : "Owner and Creator",
 			"responsibilities" : ["Worked directly with international brands (including Kaweco, Massdrop, Monsieur Notebook, and JustWrite) to test and review products", "Regular content creation for blog and YouTube channel", "Regular posting on social network channels (Twitter, Facebook)", "Selling/trading of products"],
-			"description" : "Did some stuff"
+			"description" : "<p>Pentorium was born from my fascination with pens and high quality stationery, a love for good design, and my ever changing organisational habits. Initially it was simply an outlet for my thoughts, but it has turned into a much larger project over the past couple of years.</p><p>The site garners upwards of 1000 visits every day, and I have worked with several international brands doing sponsored posts and other work.</p><p>The blog is based on Wordpress, giving me a lot of experience with the platform, as well as broadening my knowledge of PHP.</p>"
 		},
 		{
 			"title" : "Photographer",
 			"sub_title" : "Professional and freelance work",
 			"responsibilities" : ["Paid portraiture sessions for local businesses", "Event photographer, including weddings and parties", "Product photography", "Fashion photographer for www.confettiavenue.com"],
-			"description" : ""
+			"description" : "<p>Photography began as a hobby, but over the years it has become much more than that.</p><p>As well as being the photographer on the blog Confetti Avenue, I have done portraiture sessions for businesses to use on their marketing materials, regularly taking photos of products at Untapped Fine Wines, and shot events such as weddings and parties.</p><p>My website at www.jongphotography.com showcases some of my past work.</p>"
+		},
+		{
+			"title" : "Web Developer",
+			"sub_title" : "Freelance work",
+			"responsibilities" : ["Per-job based web development work", "Working with PHP, HTML, CSS, and Javascript", "Wordpress and other platforms"],
+			"description" : "<p>I do freelance work in addition to my full-time job as a web developer.</p><p>Usually these jobs are small to medium sized, involving anything from setting up an online store to sell digital products, to adding and customising content for Wordpress</p>"
 		}
 	]
 }
