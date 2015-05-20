@@ -1,23 +1,23 @@
 <section id="jg-contact" class="row">
 	{{#if this.info_msg}}
-	<div id="jg-info-msg" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 {{this.info_class}}">
+	<div id="jg-info-msg" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 blink-me {{this.info_class}}">
 		<h1>{{this.info_msg}}</h1>
 	</div>
 	{{/if}}
 	<form method="post" action="/contact" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3">
 		<fieldset>
 			<div id="jg-form-name">
-				<input type="text" name="name" value="" placeholder="Name"/>
+				<input type="text" name="name" value="{{this.retain.name}}" placeholder="Name"/>
 			</div>
 			<div id="jg-form-email">
-				<input type="text" name="email" value="" placeholder="Email"/>
+				<input type="text" name="email" value="{{this.retain.email}}" placeholder="Email"/>
 			</div>
 			<div id="jg-form-subject">
-				<input type="text" name="subject" value="" placeholder="Subject"/>
+				<input type="text" name="subject" value="{{this.retain.subject}}" placeholder="Subject"/>
 			</div>
 			<div id="jg-form-message">
 				<label for="message">Message</label>
-				<textarea name="message" cols="40" rows="10"></textarea>
+				<textarea name="message" cols="40" rows="10">{{this.retain.message}}</textarea>
 			</div>
 			<div>
 				<input name="submit" type="submit" value="Send"/>

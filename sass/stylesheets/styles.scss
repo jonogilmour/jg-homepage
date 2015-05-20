@@ -82,6 +82,20 @@
           border-radius: $radius;
 }
 
+@mixin blinker($time) {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: $time;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: blinker;
+    -moz-animation-duration: $time;
+    -moz-animation-timing-function: linear;
+
+    animation-name: blinker;
+    animation-duration: $time;
+    animation-timing-function: linear;
+}
+
 /* Other Settings */
 @viewport{
     zoom: 1.0;
@@ -770,6 +784,10 @@ li {
 			font-size: 15px;
 		}
 		
+		&.blink-me {
+			@include blinker(0.7s);
+		}
+		
 		&.jg-success {
 			color: $success-colour;
 		}
@@ -837,10 +855,48 @@ li {
 	}
 }
 
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
 /* Media specific */
 
 @media (min-width: 1200px) {
   .container {
     width: 970px;
   }
+}
+
+/* Animations */
+
+@-moz-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
 }

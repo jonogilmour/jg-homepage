@@ -37,24 +37,41 @@ router.route("/api")
 
 router.route("/contact")
 .post(function(req, res) {
+	var infoRetain = {
+		name: req.body.name,
+		email: req.body.email,
+		subject: req.body.subject,
+		message: req.body.message
+	};
+	
 	// Contact email message
 	var msgSuccess = {
 		info_msg: "Message sent!",
-		info_class: "jg-success"
-	}
+		info_class: "jg-success",
+		retain: infoRetain
+	};
 	var msgWarn = {
 		info_msg: "Looks like you left some fields empty",
-		info_class: "jg-warning"
-	}
+		info_class: "jg-warning",
+		retain: infoRetain
+	};
 	var msgError = {
 		info_msg: "An error occurred, please try again later",
-		info_class: "jg-error"
-	}
+		info_class: "jg-error",
+		retain: infoRetain
+	};
 	
 	// Check for empty fields
 	if(!req.body.name.length || !req.body.email.length || !req.body.subject.length || !req.body.message.length) {
 		//add fail message
 		console.log("- Can't send mail - empty field(s)");
+		res.render(routeMap.contact, msgWarn);
+		return;
+	}
+	
+	// Form validation
+	if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email)) {
+		msgWarn.info_msg = "Please check your email address"
 		res.render(routeMap.contact, msgWarn);
 		return;
 	}
