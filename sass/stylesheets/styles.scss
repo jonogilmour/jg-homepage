@@ -20,6 +20,24 @@
 	border-right: 1px solid #1de52c;
 }
 
+/*
+	Styles SCSS
+	By Jonathan Gilmour
+	
+	Sections
+	- Variables: Useful SCSS variables to change whole site styling
+	- Mixins
+	- Other: Miscellaneous styling (eg viewport scaling)
+	- Element styling
+	- Class styling
+	- ID styling
+	
+	To do
+	- Remove media section at bottom
+	- Consolidate classes/ids
+	- Nest as much as possible
+	- DRY
+*/
 
 /* Variables */
 	// Pixel values
@@ -37,6 +55,7 @@
 	$red-dark-colour: #ab0505;
 	$happy-colour: #3ACEF2;
 	$success-colour: #69D76D;
+	$warning-colour: #FCE46A;
 	$default-colour: #666;
 	$safe-colour: #41AB45;
 	$purple-colour: #663D67;
@@ -53,6 +72,15 @@
 	$med-light-colour: #999;
 	$med-colour: #666;
 	$dark-colour: #333;
+	
+/* Mixins */
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
 
 /* Other Settings */
 @viewport{
@@ -209,6 +237,10 @@ li {
 	img {
 		max-width: 100%;
 		margin-bottom: 13px;
+		
+		@media screen and (min-width: $md-screen-min) {
+			max-width: 80%;
+		}
 	}
 	
 	#jg-size, #jg-lang {
@@ -368,7 +400,7 @@ li {
 	padding-top: 50px;
 }
 
-#jg-main-banner, #jg-work-banner, #jg-history-banner {
+#jg-main-banner, #jg-work-banner, #jg-history-banner, #jg-about-banner {
 	color: $light-colour;
 	
 	h1 {
@@ -413,6 +445,11 @@ li {
 
 #jg-history-banner {
 	background-color: $safe-colour;
+	padding: 30px 0;
+}
+
+#jg-about-banner {
+	background-color: $purple-colour;
 	padding: 30px 0;
 }
 
@@ -491,6 +528,8 @@ li {
 		}	
 		
 		li {
+			margin-top: 0;
+			
 			@media screen and (max-width: $xs-screen-max) {
 				height: 50px;
 			}
@@ -641,8 +680,38 @@ li {
 						margin-top: 0;
 						font-size: 20px;
 					}
-					ul {
-						padding-left: 1em;
+				}
+			}
+			
+			#jg-projects-links {
+				padding-left: 0;
+				
+				li {
+					list-style: none;
+					a {
+						padding-left: 5px;
+					}
+					
+					&:before {    
+						position: relative;
+						top: 1px;
+						display: inline-block;
+						font-family: 'Glyphicons Halflings';
+						font-style: normal;
+						font-weight: normal;
+						line-height: 1;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+						content: "\e080";
+					}
+				}
+				
+				a {
+					color: $light-colour;
+					
+					&:hover {
+						color: $med-light-colour;
+						text-decoration: none;
 					}
 				}
 			}
@@ -650,6 +719,123 @@ li {
 	}
 }
 
+#jg-me {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: $purple-light-colour;
+	color: $light-colour;
+	
+	#jg-info {
+		margin-top: 15px;
+		
+		#jg-interests {
+			h2 {
+				margin-top: 0;
+			}
+		}	
+	}
+	
+	#jg-profile {
+				
+		h2 {
+			margin-top: 0;
+			margin-bottom: 5px;
+			margin-left: 5px;
+			font-size: 28px;
+		}
+		
+		@media screen and (max-width: $sm-screen-min) {
+			text-align: center;
+		}
+	}
+	
+	#jg-profile-image {
+		img {
+			width: 75%;
+		}
+	}
+}
+
+#jg-contact {
+	background-color: $purple-light-colour;
+	color: $light-colour;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	
+	#jg-info-msg {
+		text-align: left;
+		
+		h1 {
+			font-size: 15px;
+		}
+		
+		&.jg-success {
+			color: $success-colour;
+		}
+		
+		&.jg-warning {
+			color: $warning-colour;
+		}
+		
+		&.jg-error {
+			color: $red-colour;
+		}
+	}
+	
+	form {
+		text-align: left;
+		
+		textarea, input {
+			color: $dark-colour;
+			@include border-radius(5px);
+			border: none;
+			padding: 5px;
+			
+			&:focus {
+				outline:0;
+			}
+		}
+		
+		textarea {
+			width: 100%;
+		}
+		
+		input {
+			width: 50%;
+			margin-bottom: 10px;
+			
+			@media screen and (max-width: $xs-screen-max) {
+				width: 100%;
+			}
+			
+			&[type="submit"] {
+				width: 100px;
+				margin-top: 20px;
+				color: $light-colour;
+				background-color: $green-colour;
+				
+				&:hover {
+					background-color: $green-light-colour;
+				}
+				
+				&:active {
+					background-color: $green-colour;
+				}
+			}
+		}
+		
+		#jg-form-subject {
+			margin-top: 20px;
+		}
+		
+		#jg-form-message {
+			textarea, label {
+				display: block;
+			}	
+		}
+	}
+}
 
 /* Media specific */
 

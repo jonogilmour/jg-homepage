@@ -5,7 +5,7 @@ var assert = require("assert");
 var request = require("supertest");
 var app = require("../../app");
 
-describe("Routing", function() {
+describe("GET routes", function() {
 	// Base
 	it("/ should return status 200", function(done) {
 		request(app)
@@ -87,3 +87,18 @@ describe("Routing", function() {
 		})
 	});
 });
+
+describe("POST routes", function() {
+	// Test contact form
+	it("/contact should succeed", function(done) {
+		request(app)
+		.post("/contact")
+		.field("name", "Mocha Jones")
+		.field("email", "mocha@testemail.com")
+		.field("message", "Hello there! This is a test. Love from Mocha")
+		.end(function(err, res) {
+			if(err) throw err;
+			done();	
+		})
+	});
+})

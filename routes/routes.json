@@ -13,6 +13,7 @@
 		"data" : "data/history.json",
 		"view" : "history"
 	},
+	"contact" : "contact",
 	"_404" : "404",
 	"_500" : "500",
 	"redirect-test" : {

@@ -5,14 +5,14 @@
 			"title" : "BSc (Computing and Software Systems)",
 			"date" : 2014,
 			"subjects" : ["IT Project", "Graphics and Interaction", "Informatics (1, 2, and 3)", "Software Modeling and Design", "Computer Systems", "Declarative Programming"],
-			"description" : "<p>My degree involved a good mixture of subjects from both Computer Science and Software Engineering disciplines.</p><p>Project work, especially when programming using unfamiliar concepts, was the most enjoyable part of my degree. For example, in my final semester I had to concurrently manage two teams creating a mobile app and a 3D game in DirectX, two areas I had zero previous experience in. To go from knowing very little about the technologies to making functional applications in a matter of weeks was very rewarding, and the team-based project work greatly improved my skills in developing applications with others, especially in a high pressure situation with looming deadlines.</p><p>One other key area I greatly improved is in my ability to work, and learn, autonomously by myself. I would often take the topics, languages, and concepts touched on in classes and explore them on my own, teaching myself the programming languages along the way. In fact, very little of my actual programming ability was actually learned at university, as I prefer to learn-by-doing whilst teaching myself, rather than the usual approach of, \"Learn, then do.\"</p><p>Despite my excellent scores in project work, I was often let down by my exam marks, which resulted in lower scores than I expected. Nonetheless, I have focused my efforts on improving my practical skills in both web development and programming in general, and the breadth of my project work is an indicator of that.</p>"
+			"description" : "<p>My degree involved a good mixture of subjects from both Computer Science and Software Engineering disciplines.</p><p>Project work, especially when programming using unfamiliar concepts, was the most enjoyable part of my degree. For example, in my final semester I had to concurrently manage two teams creating a mobile app and a 3D game in DirectX, two areas I had zero previous experience in. To go from knowing very little about the technologies to making functional applications in a matter of weeks was very rewarding, and the team-based project work greatly improved my skills in developing applications with others, especially in a high pressure situation with looming deadlines.</p><p>One other key area I greatly improved is in my ability to work, and learn, autonomously by myself. I would often take the topics, languages, and concepts touched on in class and explore them on my own, teaching myself the programming languages along the way. Whilst university gave me the fundamentals, I acquired most of my knowledge independly, as I prefer to learn-by-doing whilst teaching myself, rather than the usual approach of, \"Learn, then do.\"</p><p>Despite my excellent scores in project work, I was often let down by my exam marks, which resulted in lower scores than I expected. Nonetheless, I have focused my efforts on improving my practical skills in both web development and programming in general, and the breadth of my project work is an indicator of that.</p>"
 		},
 		{
 			"institution" : "Brighton Grammar School",
 			"title" : "VCE",
 			"date" : 2010,
 			"subjects" : ["Mathematical Methods", "Biology", "Japanese", "Business Management", "English"],
-			"description" : "<p>During my time at school I was a member of the concert band percussion section, achieved a Silver level in the Duke of Edinburgh award, and was a part of the army cadet program.</p><p>I was also chosen to participate in the gifted learning program.</p><p>In 2009 I was part of a small group that embarked on a two-week exchange to Japan. This trip allowed me to expand my skills in Japanese, but also to soak up the Japanese culture as well. I stayed with a Japanese family and attended school in Tokyo, before travelling to Kyoto and Hiroshima.</p>"
+			"description" : "<p>During my time at school I was a member of the concert band percussion section, achieved a Silver level in the Duke of Edinburgh award, and was a part of the army cadet program.</p><p>I was also chosen to participate in the gifted learning program, where we explored complex topics in philosophy and psychology, which helped to expand my critical thinking skills.</p><p>In 2009 I was part of a small group that embarked on a two-week exchange to Japan. This trip allowed me to expand my skills in Japanese, but also to soak up the Japanese culture as well. I stayed with a Japanese family and attended school in Tokyo, before travelling to Kyoto and Hiroshima.</p>"
 		}
 	],
 	"jobs" : 		[
@@ -21,8 +21,8 @@
 			"title" : "IT Manager",
 			"format" : "Full/Part-time",
 			"date" : "2011-Present",
-			"responsibilities" : ["Web developer", "Responsible for the entire company's IT infrastructure", "Maintaining a fleet of computers and mobile devices", "Developing and deploying programs to assist business processes", "Regular creation of marketing materials (EDMs)", "Product photographer", "Graphic designer"],
-			"description" : "<p>I was present when the company began in 2011, and since then the business has grown from just a few employees to a team of over twenty people, including those interstate in NSW, QLD, and WA, and overseas at our South American office. As the company has grown, so has its IT requirements, and it has been my responsibility to manage the company's entire IT infrastructure.</p><p>Each employee has a laptop and phone that I have to oversee and manage, in addition to maintaining the company's email system and web hosting servers (offsite).</p><p>I built the company's website, hosted on the BigCommerce ecommerce platform, and have recently been responsible for moving platforms to Magento, based on a VPS hosting server. In developing the initial site, I was responsible for the entire process, including planning the initial design, styling using HTML and CSS, adding functional components using Javascript and JQuery, and importing all the original data (including photographing products).</p><p>Outside of web development, I am involved in the management and marketing of the business, working closely with other managers to set promotions, design EDMs, and improve conversion rates. I also develop web-apps and other programs to streamline internal business processes.</p><p>I worked part-time during university, and full-time during holiday periods.</p>"
+			"responsibilities" : ["Web developer", "Responsible for the entire company's IT infrastructure", "Maintaining a fleet of computers and mobile devices", "Developing and deploying programs to assist business processes", "Regular creation of marketing materials (EDMs)", "Product photographer", "Graphic designer", "Tech support for all employees"],
+			"description" : "<p>I was present when the company began in 2011, and since then the business has grown from just a few employees to a team of over twenty people, including those interstate in NSW, QLD, and WA, and overseas at our South American office. As the company has grown, so has its IT requirements, and it has been my responsibility to manage the company's entire IT infrastructure.</p><p>Each employee has multiple devices that I have to oversee and manage, in addition to maintaining the company's email system and web hosting servers (offsite).</p><p>I built the company's website, hosted on the BigCommerce ecommerce platform, and have recently been responsible for moving platforms to Magento, based on a VPS hosting server. In developing the initial site, I was responsible for the entire process, including planning the initial design, styling using HTML and CSS, adding functional components using Javascript and JQuery, and importing all the original data (including photographing products).</p><p>Outside of web development, I am involved in the management and marketing of the business, working closely with other managers to set promotions, design EDMs, and improve conversion rates. I also develop web-apps and other programs to streamline internal business processes.</p><p>I worked part-time during university, and full-time during holiday periods.</p>"
 		},
 		{
 			"company" : "Ansett Aviation Training",
@@ -40,42 +40,132 @@
 				{
 					"language" : "C",
 					"projects" : [
-						
+						{
+							"name": "Proxy Server",
+							"url" : "https://github.com/jonogilmour/jgilmour-proxyserver"
+						},
+						{
+							"name": "Disaster Relief Pathfinding (Dijkstra)",
+							"url" : "https://github.com/jonogilmour/jgilmour-dijkstra"
+						},
+						{
+							"name": "Skip Dictionary Search Efficiency Algorithm",
+							"url" : "https://github.com/jonogilmour/jgilmour-skipdictionary"
+						}
 					],
 					"description" : "<p>My first attempt at computer programming was when I had just turned 14. I did a Google search on programming languages and found C, which ended up being the best first programming language for me.</p><p>The complex structure of C introduced me to concepts like memory management, pointers, references, and more. Although I didn't understand a lot of it at first, being thrown into the deep end first meant that learning higher-level languages (such as Python) was significantly easier for me.</p><p>The vast majority of my complex algorithm and data structure work has been in C, and although it's not my go-to language, it's one I'm extremely confident in using.</p><p>Given that C is very complex and strictly typed, it set habits like triple-checking code, diligent testing, and adhering to a cohesive structure that has aided me throughout my development as a programmer.</p>"
 				},
 				{
 					"language" : "HTML",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						},
+						{
+							"name": "Jonathan Gilmour Photography",
+							"url" : "http://www.jonogphotography.com"
+						},
+						{
+							"name": "Untapped Fine Wines",
+							"url" : "http://www.untappedwines.com.au"
+						},
+						{
+							"name": "Pentorium",
+							"url" : "http://www.pentorium.com"
+						},
+						{
+							"name": "Confetti Avenue",
+							"url" : "http://www.confettiavenue.com"
+						},
+						{
+							"name": "UFW HTML Grid Generator",
+							"url" : "http://webapps.untappedwines.net/grid-gen/index.html"
+						},
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
 					"description" : "<p>I write loads of HTML every day, and have done so for years, and am always interested in improving the way I structure my markup.</p><p>I turned my attention to HTML5 some time ago, having previously done a lot of work in (X)HTML4, and I'm always interested to see new developments in the HTML standards.</p>"
 				},
 				{
 					"language" : "CSS",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						},
+						{
+							"name": "Jonathan Gilmour Photography",
+							"url" : "http://www.jonogphotography.com"
+						},
+						{
+							"name": "Untapped Fine Wines",
+							"url" : "http://www.untappedwines.com.au"
+						},
+						{
+							"name": "Pentorium",
+							"url" : "http://www.pentorium.com"
+						},
+						{
+							"name": "Confetti Avenue",
+							"url" : "http://www.confettiavenue.com"
+						},
+						{
+							"name": "UFW HTML Grid Generator",
+							"url" : "http://webapps.untappedwines.net/grid-gen/index.html"
+						},
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
 					"description" : "<p>Despite the fact that CSS is not necessarily a programming language, there is so much to learn and so many tools to add to the toolkit that I still find myself discovering new things, especially in the CSS3 standard.</p><p>My current work involves integrating responsive design into my workflow, developing with a \"mobile-first\" mindset, and every change I make to my styling is thoroughly tested on both mobile and desktop browsers. As mobile web browsers now take a sizable portion of web traffic, it's important to make sure that the user experience on tablets and phones is just as compelling and functional as it is on the desktop.</p>"
 				},
 				{
 					"language" : "Javascript",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						},
+						{
+							"name": "Jonathan Gilmour Photography",
+							"url" : "http://www.jonogphotography.com"
+						},
+						{
+							"name": "Untapped Fine Wines",
+							"url" : "http://www.untappedwines.com.au"
+						},
+						{
+							"name": "UFW HTML Grid Generator",
+							"url" : "http://webapps.untappedwines.net/grid-gen/index.html"
+						},
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
 					"description" : "<p>Javascript is such a ubiquitous language that I think I have written more Javascript than anything else, but it is rarely without using a plugin or framework of some sort.</p><p>Recently my attention has been devoted to AngularJS and NodeJS, two extraordinary frameworks that are a real indicator of the future of web development. However, despite my love for everything JS, I'm always well aware that utter reliance on client-side scripting is not really an option, so I make sure I do my web development with that in mind.</p><p>I am always impressed by what others are able to create with Javascript, and having elements of functional, OO, and procedural languages makes it easy to apply to almost any situation</p>"
 				},
 				{
 					"language" : "Git",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						}
 					],
 					"description" : "<p>Having been forced to use SVN for the majority of my projects at university, Git was a breath of fresh air, and I now <span class=\"pre\">\"git commit\"</span> almost every day.</p><p>All of my current code is version controlled, and most of my past projects can be found on Github, so I have a lot of experience with git on both the command line and in GUIs like SourceTree and Github</p>"
 				},
 				{
 					"language" : "C++",
 					"projects" : [
-						
+						{
+							"name": "RiplGame",
+							"url" : "https://github.com/jonogilmour/RiplGame"
+						}
 					],
 					"description" : "<p>I have been using C++ on and off over the years, and it was my first proper object-oriented language, leading me to Python, Objective-C, and others.</p><p>Most of my C++ work has been on small to medium sized command-line programs, but in my final semester at university I took the opportunity to really get hands dirty and get into games development, using vanilla DirectX 11 to create a game for Windows 8.1 tablets.</p><p>Dynamically creating vector-based polygons, manipulating vertex and index buffers, and importing and configuring shaders were just a few of the things I learned on the project, and they were all done using C++.</p>"
 				},
@@ -83,9 +173,12 @@
 				{
 					"language" : "Swift",
 					"projects" : [
-						
+						{
+							"name": "RageJump",
+							"url" : "https://bitbucket.org/michaeman/ragejumper"
+						}
 					],
-					"description" : "<p>I began using Swift in mid-2014 in its beta form, and instantly fell in love with it. I like to think of Swift as taking the best parts of every language and putting them together, and despite some issues with bugs in the beta release, I thoroughly enjoyed learning and using it.</p><p>My final university project was an iOS game coded in Swift, but using APIs (Gamecenter, SpriteKit) that had not been fully ported from Objective-C. As such, I also had to learn to translate between Swift and Objective-C code, which improved my understanding of both languages.</p><p>As it stands, Swift is currently my favourite programming language, and I'm a regular contributor to Swift StackOverflow topics</p>"
+					"description" : "<p>I began using Swift in mid-2014 in its beta form, and instantly fell in love with it. I like to think of Swift as taking the best parts of every language and putting them together, and despite some issues with bugs in the beta release, I thoroughly enjoyed learning and using it.</p><p>My final university project was an iOS game coded in Swift, but using APIs (Gamecenter, SpriteKit) that had not been fully ported from Objective-C. As such, I also had to learn to translate between Swift and Objective-C code, which improved my understanding of both languages.</p><p>As it stands, Swift is currently my favourite programming language, and I'm a regular contributor to Swift StackOverflow topics.</p>"
 				}
 			]
 		},
@@ -95,7 +188,10 @@
 				{
 					"language" : "NodeJS",
 					"projects" : [
-						
+						{
+							"name" : "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						}
 					],
 					"description" : "<p>My initial foray into Node started when I was searching for a good alternative to PHP and the LAMP stack. I found PHP to be a messy language, having tackled several PHP projects before. The prevalence of mixing logic into your markup never really worked for me at all.</p><p>I came across Node, and found its syntax to be neat, simple, and intuitive, and its even-driven, single-thread design beats dealing with multithreading issues and is indicative of a modern trend of leaning towards simplicity and speed. Javascript has always been one of my favourite languages, certainly in my top three, so to be able to focus on just one syntax across the front and back ends of a system saves a lot of headaches, and sharing of code cuts development time too.</p><p>Frameworks like Express make it easy to get a server up and running, but I find the real power of Node lies in its scalability. Although I'm just in my beginning stages of using Node, I find MEAN is a suitable alternative to LAMP, and in my mind it is a superior one too!</p>"
 				},
@@ -109,35 +205,82 @@
 				{
 					"language" : "Objective-C",
 					"projects" : [
-						
+						{
+							"name": "RageJump",
+							"url" : "https://bitbucket.org/michaeman/ragejumper"
+						}
 					],
 					"description" : "<p>I began toying with the idea of app development a couple of years ago, which started with me learning Objective-C.</p><p>The introduction of technologies like ARC have made Objective-C development easier than ever, and I still read and write Objective-C code when writing Swift apps using APIs that have not been ported to Swift, so it is a language that will be in my vocabulary for some time to come.</p>"
 				},
 				{
 					"language" : "SASS/SCSS",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						},
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
 					"description" : "<p>Prior to encountering SASS, I had no idea that CSS preprocessors existed, or why they would exist at all.</p><p>Now, I write as much SCSS as I can, whenever I can, as I find it's a powerful tool that saves a lot of time, especially when using variables and mixins to change several blocks of CSS at once.</p><p>This site's stylesheets are processed from SCSS source using a SASS compiler, which is run whenever the source file is modified, and it has made the process of styling this site much, much easier than with regular CSS.</p>"
 				},
 				{
 					"language" : "SQL",
 					"projects" : [
-						
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
-					"description" : "<p>I've used MySQL or SQLite in any project where a database is required, and there are SQL query plugins for essentially every popular language and framework today.</p><p>Whilst I know the structure and function of SQL databases and have written many applications that use them, I have begun focus more on NoSQL databases that rely less on schema and rigid structuring of data, like Redis and MongoDB</p>"
+					"description" : "<p>I've used MySQL or SQLite in any project where a database is required, and there are SQL query plugins for essentially every popular language and framework today.</p><p>Whilst I know the structure and function of SQL databases and have written many applications that use them, I have begun to focus more on NoSQL databases that rely less on schema and rigid structuring of data, like Redis and MongoDB.</p>"
 				},
 				{
 					"language" : "JQuery",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						},
+						{
+							"name": "Jonathan Gilmour Photography",
+							"url" : "http://www.jonogphotography.com"
+						},
+						{
+							"name": "Untapped Fine Wines",
+							"url" : "http://www.untappedwines.com.au"
+						},
+						{
+							"name": "UFW HTML Grid Generator",
+							"url" : "http://webapps.untappedwines.net/grid-gen/index.html"
+						},
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
 					"description" : "<p>Like many web developers, I initially learned JQuery in order to make animations and CSS effects an easier task than using vanilla Javascript.</p><p>These days I use JQuery whenever I'm not writing AngularJS in the browser (and sometimes, even when I am).</p>"
 				},
 				{
 					"language" : "Bootstrap",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						},
+						{
+							"name": "Jonathan Gilmour Photography",
+							"url" : "http://www.jonogphotography.com"
+						},
+						{
+							"name": "UFW HTML Grid Generator",
+							"url" : "http://webapps.untappedwines.net/grid-gen/index.html"
+						},
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
 					"description" : "<p>Bootstrap was a revelation when I first started learning it, and it introduced me to the world of responsive web design.</p><p>Now, I don't leave home without it, as they say. Every site I've built since learning it has incorporated Bootstrap's intuitive grid layout system and helpful styling classes inside and out, and I've also brought in the Javascript libraries to avoid writing extraneous code. In terms of tools in the web developer toolbox, Bootstrap is probably my favourite and most used.</p>"
 				}
@@ -149,14 +292,20 @@
 				{
 					"language" : "Ruby",
 					"projects" : [
-						
+						{
+							"name": "Club-Bizz",
+							"url" : "https://github.com/majames/club_bizz"
+						}
 					],
 					"description" : "<p>I first used Ruby when I worked on a group projects, developing a Rails app with calls to an SQL database. I found Rails to be a fantastic time saver, and the wealth of available gems means writing modular, error free code is easy and fast. I focus more on NodeJS development now, but I'm well aware that Ruby is a huge part of modern web development, so it's one language I won't forget anytime soon.</p>"
 				},
 				{
 					"language" : "Haskell",
 					"projects" : [
-						
+						{
+							"name": "Card Guessing Game",
+							"url" : "https://github.com/jonogilmour/jgilmour-haskell-cardguess"
+						}
 					],
 					"description" : "<p>My initial exposure to purely functional programming was with Haskell, and it really is a prime example of a functional language through and through.</p><p>I, like many other imperative developers, tried to write Haskell code with the same form and structure as my procedural code, which is obviously not the way to go. With some practice, though, I found that writing logic programs was easy in Haskell, certainly much easier than C or C++.</p><p>Whilst Haskell isn't a language I'll use often, it's been a great learning experience and also affected the way I think about my code in general.</p>"
 				},
@@ -170,28 +319,52 @@
 				{
 					"language" : "Prolog",
 					"projects" : [
-						
+						{
+							"name": "Fillin Crossword Puzzle Solver",
+							"url" : "https://github.com/jonogilmour/jgilmour-prolog-fillinpuzzle"
+						}
 					],
 					"description" : "<p>Prolog involved a lot of head scratching, but once I figured out its decision-tree structure, I realised just how powerful it can be.</p><p>I developed an algorithm for solving crossword-esque puzzles, and it gave me a new understanding of how structuring a program properly can turn a problem with extreme complexity into one that's solved in milliseconds by shrinking the test set with intelligent filtering to produce a smaller decision tree. Prolog also aided my understanding of complexity, AI programming, and the \"guessing\" ability of computers with non-deterministic algorithms.</p>"
 				},
 				{
 					"language" : "AngularJS",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						},
+						{
+							"name": "UFW HTML Grid Generator",
+							"url" : "http://webapps.untappedwines.net/grid-gen/index.html"
+						}
 					],
 					"description" : "<p>Despite my dislike for heavy reliance on client-side Javascript, AngularJS is just about the best framework for the job.</p><p>Development of webapps is made much easier with two-way binding, a robust native templating engine, and the ability to split your code to any degree you wish to create highly reusable modules. Now that web applications are becoming more and more ubiquitous, frameworks like Angular are becoming more relevant than ever, which is why I am focusing a large bulk of my attention to web development using Node and Angular together.</p>"
 				},
 				{
 					"language" : "PHP",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Photography",
+							"url" : "http://www.jonogphotography.com"
+						},
+						{
+							"name": "Pentorium",
+							"url" : "http://www.pentorium.com"
+						},
+						{
+							"name": "Confetti Avenue",
+							"url" : "http://www.confettiavenue.com"
+						}
 					],
 					"description" : "<p>I have mixed feelings about PHP. Whilst I don't doubt its relevance in today's web development scene (LAMP, for example), I find it to be a rather messy language that can get very complex, very fast, with a heavy reliance on mixing logic with markup that feels like a bit of a code smell.</p><p>I would sooner make an application using Node or Ruby, but my work has necessitated an exposure to a lot of PHP (Wordpress and Magento, for example), and as such I've had to learn a lot about the language at work and in personal side projects.</p>"
 				},
 				{
 					"language" : "C#",
 					"projects" : [
-						
+						{
+							"name": "Random Fractal Terrain Generator",
+							"url" : "https://github.com/jonogilmour/jgilmour-fractal-terrain"
+						}
 					],
 					"description" : "<p>With so many languages involving the letter 'C', it's easy to get bogged down by minor differences in syntax, but C# is one language I actually quite enjoyed learning.</p><p>I learned C# and within a few days I developed my first 3D graphics application using SharpDX - a C# wrapper for DirectX. I found it easy to pick up, and it is certainly cleaner and easier to use than C++. Nonetheless, my work involves very little .NET, so I don't use it that often, but I do consider it one of Microsoft's better ideas.</p>"
 				},
@@ -205,9 +378,12 @@
 				{
 					"language" : "Mocha",
 					"projects" : [
-						
+						{
+							"name": "Jonathan Gilmour Homepage",
+							"url" : "https://github.com/jonogilmour/jg-homepage"
+						}
 					],
-					"description" : "<p>Having not done a whole lot of TDD outside of the odd assert statement in C programs, I was eager to begin learning how to write code that is well tested.</p><p>Mocha is a brilliant BDD framework written in Javascript that, when combined with natural-language assertion libraries like Should, allow for expressive and meaningful testing that saves a lot of frustration and cuts down on bugs.</p><p>I developed this site by employing BDD principles, by testing first, then coding to pass, then testing again. The result has been less unexpected results in my code, and a better understanding of how to write better, more concise code that degrades gracefully.</p>"
+					"description" : "<p>Having not done a whole lot of TDD outside of the odd assert statement in C programs, I was eager to begin learning how to write code that is well tested.</p><p>Mocha is a brilliant BDD framework written in Javascript that, when combined with natural-language assertion libraries like Should, allows for expressive and meaningful testing that saves a lot of frustration and cuts down on bugs.</p><p>I developed this site by employing BDD principles, by testing first, then coding to pass, then testing again. The result has been less unexpected results in my code, and a better understanding of how to write better, more concise code that degrades gracefully.</p>"
 				}
 			]
 		}
@@ -229,7 +405,7 @@
 			"title" : "Web Developer",
 			"sub_title" : "Freelance work",
 			"responsibilities" : ["Per-job based web development work", "Working with PHP, HTML, CSS, and Javascript", "Wordpress and other platforms"],
-			"description" : "<p>I do freelance work in addition to my full-time job as a web developer.</p><p>Usually these jobs are small to medium sized, involving anything from setting up an online store to sell digital products, to adding and customising content for Wordpress</p>"
+			"description" : "<p>I do freelance work in addition to my full-time job as a web developer.</p><p>Usually these jobs are small to medium sized, involving anything from setting up an online store to sell digital products, to adding and customising content for Wordpress. No job is too big or too small, and I love taking opportunities to broaden my experience in any way I can.</p>"
 		}
 	]
 }

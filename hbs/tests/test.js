@@ -185,3 +185,16 @@ describe("link(item)", function() {
 	 	done();
 	 });
 });
+
+describe("myAge()", function() {
+	var myAge = helpers.myAge;
+	
+	 it("should return a string", function(done) {
+	 	myAge().should.be.string;
+	 	done();
+	 });
+	 it("should return 22 (in 2015)", function(done) {
+	 	myAge().should.be.exactly("22");
+	 	done();
+	 });
+});

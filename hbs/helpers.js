@@ -86,6 +86,7 @@ module.exports = {
 	},
 	/*
 		Turn each item in a list into an li
+		@param [String]
 	*/
 	list: function(items) {
 		if(items && items.constructor === Array) {
@@ -103,7 +104,19 @@ module.exports = {
 		return "list-error";
 	},
 	/*
-		Takes an item object
+		List function that takes a HTML block 
+		@param [String]
+	*/
+	listBlock: function(context, options) {
+		var htmlOut = "";
+		context.forEach(function(item) {
+			htmlOut += "<li>" + options.fn(item) + "</li>";	
+		});
+		return htmlOut;
+	},
+	/*
+		Takes an item object and turns it into a HTML link
+		@param Object
 	*/
 	link: function(item) {
 		if (item && checkString(item.url)) {
@@ -120,5 +133,26 @@ module.exports = {
 			return htmlOut + "</a>";
 		}
 		return "link-error";
+	},
+	/*
+		Takes a list of link items and creates a <ul> of HTML links
+		@param [Object]
+	*/
+	linkList: function(items) {
+		if(!items.length) return "";
+		var links = [];
+		items.forEach(function(item) {
+			links.push(this.link(item));	
+		});
+		return this.list(links);
+	},
+	/*
+		Returns my age
+	*/
+	myAge: function() {
+		var bday = new Date(1992, 9, 8);
+	    var ageDifMs = Date.now() - bday.getTime();
+	    var ageDate = new Date(ageDifMs);
+	    return Math.abs(ageDate.getUTCFullYear() - 1970).toString();
 	}
 } 

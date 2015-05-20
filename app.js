@@ -5,6 +5,11 @@ var express = require("express");
 var app = express();
 var path = require("path");
 var http = require("http");
+var bodyParser = require("body-parser");
+
+// Bodyparser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Router engine
 var routeMap = require("./routes/routes.json"); // Cache the routemap
