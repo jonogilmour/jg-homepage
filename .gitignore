@@ -1,3 +1,4 @@
 node_modules
 public/css/*.css
 **/*.txt
+routes/auth.json

@@ -10,6 +10,7 @@ var util = require("util");
 var path = require("path");
 var fs = require("fs");
 var router = require("express").Router();
+var authFile = require("./auth.json");
 module.exports = router;
 
 var routeMap = require("./routes.json");
@@ -48,17 +49,30 @@ router.route("/contact")
 	var msgSuccess = {
 		info_msg: "Message sent!",
 		info_class: "jg-success",
-		retain: infoRetain
+		retain: {
+			name: req.body.name,
+			email: req.body.email
+		}
 	};
 	var msgWarn = {
 		info_msg: "Looks like you left some fields empty",
 		info_class: "jg-warning",
-		retain: infoRetain
+		retain: {
+			name: req.body.name,
+			email: req.body.email,
+			subject: req.body.subject,
+			message: req.body.message
+		}
 	};
 	var msgError = {
 		info_msg: "An error occurred, please try again later",
 		info_class: "jg-error",
-		retain: infoRetain
+		retain: {
+			name: req.body.name,
+			email: req.body.email,
+			subject: req.body.subject,
+			message: req.body.message
+		}
 	};
 	
 	// Check for empty fields
@@ -79,17 +93,14 @@ router.route("/contact")
 	//Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
 	var transporter = nodemailer.createTransport('SMTP', {
 		service: 'Gmail',
-		auth: {
-		  user: "jonogapi@gmail.com",
-		  pass: "azureus8992" 
-		}
+		auth: authFile.auth
 	});
 	//Mail options
 	var options = {
-	  from: req.body.name + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
-	  to: 'jonathan.d.gilmour@gmail.com',
+	  from: req.body.name + " <jonogapi@gmail.com>", //grab form data from the request body object
+	  to: authFile.to,
 	  subject: "JG Get in Contact: " + req.body.subject,
-	  text: req.body.message
+	  text: "From: " + req.body.name + " <"+req.body.email+">\n\nMessage:\n" + req.body.message
 	};
 	
 	transporter.sendMail(options, function(error, info){
@@ -98,7 +109,6 @@ router.route("/contact")
 	        return console.log(error);
 	    }
 	    console.log("- Message sent: " + info.response);
-
 	});
 	
 	res.render(routeMap.contact, msgSuccess);
