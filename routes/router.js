@@ -100,7 +100,7 @@ router.route("/contact")
 	  from: req.body.name + " <jonogapi@gmail.com>", //grab form data from the request body object
 	  to: authFile.to,
 	  subject: "JG Get in Contact: " + req.body.subject,
-	  text: "From: " + req.body.name + " <"+req.body.email+">\n\nMessage:\n" + req.body.message
+	  text: "From: " + req.body.name + " <"+req.body.email+">\nMessage:\n\n" + req.body.message
 	};
 	
 	transporter.sendMail(options, function(error, info){
