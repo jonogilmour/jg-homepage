@@ -6,11 +6,12 @@
 */
 
 var nodemailer = require('nodemailer');
+var AWS = require("aws-sdk");
+var s3 = new AWS.S3();
 var util = require("util");
 var path = require("path");
 var fs = require("fs");
 var router = require("express").Router();
-var authFile = require("./auth.json");
 module.exports = router;
 
 var routeMap = require("./routes.json");
@@ -38,80 +39,94 @@ router.route("/api")
 
 router.route("/contact")
 .post(function(req, res) {
-	var infoRetain = {
-		name: req.body.name,
-		email: req.body.email,
-		subject: req.body.subject,
-		message: req.body.message
-	};
-	
-	// Contact email message
-	var msgSuccess = {
-		info_msg: "Message sent!",
-		info_class: "jg-success",
-		retain: {
-			name: req.body.name,
-			email: req.body.email
-		}
-	};
-	var msgWarn = {
-		info_msg: "Looks like you left some fields empty",
-		info_class: "jg-warning",
-		retain: {
+	s3.getObject({Bucket: "heroku.jonogilmour", Key: "auth.json"},
+	function(err, data) {
+		var infoRetain = {
 			name: req.body.name,
 			email: req.body.email,
 			subject: req.body.subject,
 			message: req.body.message
+		};
+		
+		// Contact email message
+		var msgSuccess = {
+			info_msg: "Message sent!",
+			info_class: "jg-success",
+			retain: {
+				name: req.body.name,
+				email: req.body.email
+			}
+		};
+		var msgWarn = {
+			info_msg: "Looks like you left some fields empty",
+			info_class: "jg-warning",
+			retain: {
+				name: req.body.name,
+				email: req.body.email,
+				subject: req.body.subject,
+				message: req.body.message
+			}
+		};
+		var msgError = {
+			info_msg: "An error occurred, please try again later",
+			info_class: "jg-error",
+			retain: {
+				name: req.body.name,
+				email: req.body.email,
+				subject: req.body.subject,
+				message: req.body.message
+			}
+		};
+		
+		// Auth file errors
+		if (err) {
+			console.log(err);
+			res.render(routeMap.contact, msgError);
+			return;
 		}
-	};
-	var msgError = {
-		info_msg: "An error occurred, please try again later",
-		info_class: "jg-error",
-		retain: {
-			name: req.body.name,
-			email: req.body.email,
-			subject: req.body.subject,
-			message: req.body.message
+		
+		// Grab the authentication data
+		var authFile = JSON.parse(data.Body.toString());
+		 
+		
+		// Check for empty fields
+		if(!req.body.name.length || !req.body.email.length || !req.body.subject.length || !req.body.message.length) {
+			//add fail message
+			console.log("- Can't send mail - empty field(s)");
+			res.render(routeMap.contact, msgWarn);
+			return;
 		}
-	};
-	
-	// Check for empty fields
-	if(!req.body.name.length || !req.body.email.length || !req.body.subject.length || !req.body.message.length) {
-		//add fail message
-		console.log("- Can't send mail - empty field(s)");
-		res.render(routeMap.contact, msgWarn);
-		return;
-	}
-	
-	// Form validation
-	if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email)) {
-		msgWarn.info_msg = "Please check your email address"
-		res.render(routeMap.contact, msgWarn);
-		return;
-	}
-	
-	//Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
-	var transporter = nodemailer.createTransport('SMTP', {
-		service: 'Gmail',
-		auth: authFile.auth
+		
+		// Form validation
+		if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email)) {
+			msgWarn.info_msg = "Please check your email address"
+			res.render(routeMap.contact, msgWarn);
+			return;
+		}
+		
+		//Setup Nodemailer transport, I chose gmail. Create an application-specific password to avoid problems.
+		var transporter = nodemailer.createTransport('SMTP', {
+			service: 'Gmail',
+			auth: authFile.auth
+		});
+		//Mail options
+		var options = {
+		  from: req.body.name + " <jonogapi@gmail.com>", //grab form data from the request body object
+		  to: authFile.to,
+		  subject: "JG Get in Contact: " + req.body.subject,
+		  text: "From: " + req.body.name + " <"+req.body.email+">\nMessage:\n\n" + req.body.message
+		};
+		
+		transporter.sendMail(options, function(error, info){
+		    if(error){
+		    	res.render(routeMap.contact, msgError);
+		        return console.log(error);
+		    }
+		    console.log("- Message sent: " + info.response);
+		});
+		
+		res.render(routeMap.contact, msgSuccess);
 	});
-	//Mail options
-	var options = {
-	  from: req.body.name + " <jonogapi@gmail.com>", //grab form data from the request body object
-	  to: authFile.to,
-	  subject: "JG Get in Contact: " + req.body.subject,
-	  text: "From: " + req.body.name + " <"+req.body.email+">\nMessage:\n\n" + req.body.message
-	};
-	
-	transporter.sendMail(options, function(error, info){
-	    if(error){
-	    	res.render(routeMap.contact, msgError);
-	        return console.log(error);
-	    }
-	    console.log("- Message sent: " + info.response);
-	});
-	
-	res.render(routeMap.contact, msgSuccess);
 });
 
 router.route("/:page")
