@@ -1,4 +1,6 @@
 var path = require("path");
+var AWS = require("aws-sdk");
+var s3 = new AWS.S3();
 var fs = require("fs");
 try {
 	var pathsMap = require(path.join("..","data","paths.json"));	
@@ -6,31 +8,50 @@ try {
 	console.log(e);
 }
 
-/*
-	Checks if a string exists and is not empty
-*/
+/**
+ * Checks if a string exists and is not empty
+ * @param {string} str The string to check
+ * @return {boolean} True if the string exists and is not empty, otherwise false
+ */
+	
 function checkString(str) {
 	return str && typeof str === "string" && str.length;
 }
 
+/**
+ *Replaces all characters in a string between two indices with a string
+ * @param {number} start The beginning index
+ * @param {number} end The ending index
+ * @param {string} what The replacement string
+ * @return {string} The original string with the replacement inserted
+ */
+String.prototype.replaceBetween = function(start, end, what) {
+	if(start < 0 || end >= this.length) return this;
+    return this.substring(0, start) + what + this.substring(end);
+};
+
 
 module.exports = {
-	/*
-		Takes an image name and returns the full path for that image in the folder specified in the paths.json map
-		@param String
-	*/
+	/**
+	 * Takes an image name and returns the full path for that image in the folder specified in the paths.json map
+	 * @param {string} name The filename of the image
+	 * @return {string} The fully qualified image path, otherwise error
+	 */
+		
 	image: function(name) {
-		if (typeof name === "string" && name.length) {
+		if (checkString(name)) {
 			var mediaFolder = pathsMap.media;
 			return path.join(mediaFolder, name);
 		}
 		return "image-error";
 		
 	},
-	/*
-		Takes a list of values and returns a comma separated string of those values
-		@param Array
-	*/
+	
+	/**
+	 * Takes a list of values and returns a comma separated string of those values
+	 * @param {string[]} strs An array of strings
+	 * @return {string} A comma separated list of strings
+	 */
 	comma: function(strs) {
 		if(strs && strs.constructor === Array && strs.length) {
 			var list = "";
@@ -45,11 +66,18 @@ module.exports = {
 		}
 		return "comma-error";
 	},
+	
 	/*
-		Takes a list and iterates over it, and adds a different class for even or odd blocks
+		
 		@param Array
 		@param Object
 	*/
+	/**
+	 * Iterates over a list of values, rendering a HTML block and adding a different class for even or odd blocks
+	 * @param {Array} context An array of objects or values inside the block
+	 * @param {Object} options An object containing a rendering function and any extra parameters
+	 * @return {string} The completed HTML block with variables inserted
+	 */
 	evenOdd: function(context, options) {
 		var i = 0;
 		var htmlOut = "";
@@ -78,16 +106,20 @@ module.exports = {
 		}
 		return htmlOut;
 	},
-	/*
-		Grabs the current year
-	*/
+	
+	/**
+	 * Grabs the current year in number form
+	 * @return {number} The current year
+	 */
 	year: function() {
 		return new Date().getFullYear().toString();
 	},
-	/*
-		Turn each item in a list into an li
-		@param [String]
-	*/
+	
+	/**
+	 * Turn each item in a list into a HTML <li> block
+	 * @param {string[]} items An array of strings
+	 * @return {string} A HTML block with a list of 'li' entries
+	 */
 	list: function(items) {
 		if(items && items.constructor === Array) {
 			var htmlOut = ""
@@ -103,10 +135,13 @@ module.exports = {
 		}
 		return "list-error";
 	},
-	/*
-		List function that takes a HTML block 
-		@param [String]
-	*/
+	
+	/**
+	 * Takes a HTML block and a list of values and renders each block inside an <li>
+	 * @param {Array} context An array of objects or values inside the block
+	 * @param {Object} options An object containing a rendering function and any extra parameters
+	 * @return {string} The finished HTML block with values inserted
+	 */
 	listBlock: function(context, options) {
 		var htmlOut = "";
 		context.forEach(function(item) {
@@ -114,10 +149,11 @@ module.exports = {
 		});
 		return htmlOut;
 	},
-	/*
-		Takes an item object and turns it into a HTML link
-		@param Object
-	*/
+	/**
+	 * Takes an object and turns it into a HTML anchor tag
+	 * @param {{name: ?string, url: string}} item Object to turn into a link
+	 * @return {string} A HTML <a> tag with the information given
+	 */
 	link: function(item) {
 		if (item && checkString(item.url)) {
 			var htmlOut = "<a href=\"";
@@ -134,6 +170,7 @@ module.exports = {
 		}
 		return "link-error";
 	},
+	
 	/*
 		Takes a list of link items and creates a <ul> of HTML links
 		@param [Object]
@@ -154,5 +191,27 @@ module.exports = {
 	    var ageDifMs = Date.now() - bday.getTime();
 	    var ageDate = new Date(ageDifMs);
 	    return Math.abs(ageDate.getUTCFullYear() - 1970).toString();
+	},
+	/*
+		Parses a HTML block for image placeholders and set assets to be pulled from AWS S3
+		@param String
+	*/
+	file_replace_aws: function(block) {
+		var awsURL = "http://public.jonogilmour.s3.amazonaws.com/"
+		var str_start = 0;
+		var fileName;
+		var str_end;
+		while(( str_start = block.indexOf("{{>", str_start) ) > -1) {
+			str_end = block.indexOf("<}}", str_start);
+			if (str_end < 0) {
+				// Malformed HTML
+				console.log("- Warning: Wrong syntax for file insertion.")
+				return block;
+			}
+			str_start += 3;
+			fileName = block.substr(str_start,str_end-str_start);
+			block = block.replaceBetween(str_start-3, str_end+3, awsURL + fileName);
+		}
+		return block;
 	}
 } 

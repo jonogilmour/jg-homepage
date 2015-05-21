@@ -87,7 +87,18 @@ router.route("/contact")
 		
 		// Grab the authentication data
 		var authFile = JSON.parse(data.Body.toString());
-		 
+		
+		// Check for missing elements
+		if(!req.body.name || !req.body.email || !req.body.subject || !req.body.message) {
+			//add fail message
+			console.log("- Error: One or more contact fields does not exist");
+			console.log("-- name: " + req.body.name);
+			console.log("-- email: " + req.body.email);
+			console.log("-- subject: " + req.body.subject);
+			console.log("-- message: " + req.body.message);
+			res.render(routeMap.contact, msgWarn);
+			return;
+		}
 		
 		// Check for empty fields
 		if(!req.body.name.length || !req.body.email.length || !req.body.subject.length || !req.body.message.length) {

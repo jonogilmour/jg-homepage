@@ -95,6 +95,7 @@ describe("POST routes", function() {
 		.post("/contact")
 		.field("name", "Mocha Jones")
 		.field("email", "mocha@testemail.com")
+		.field("subject", "This is the subject")
 		.field("message", "Hello there! This is a test. Love from Mocha")
 		.end(function(err, res) {
 			if(err) throw err;
