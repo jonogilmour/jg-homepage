@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="JGilmour">
 	<head>
-		{{> non-render/head}}
+		{{#file_replace_aws}}
+			{{> non-render/head}}
+		{{/file_replace_aws}}
 	</head>
 	<body>
 		{{> render/template/header}}
@@ -9,5 +11,8 @@
 				{{{body}}} 
 		</div>
 		{{> render/template/footer}} 
+		{{#file_replace_aws}}
+			{{> non-render/foot-includes}}
+		{{/file_replace_aws}}
 	</body>
 </html>

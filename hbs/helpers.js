@@ -213,5 +213,30 @@ module.exports = {
 			block = block.replaceBetween(str_start-3, str_end+3, awsURL + fileName);
 		}
 		return block;
+	},
+	/*
+		Parses a HTML block for image placeholders and set assets to be pulled from AWS S3
+		@param String
+	*/
+	file_replace_aws: function(block) {
+		if(block.fn) {
+			block = block.fn();
+		}
+		var awsURL = "http://public.jonogilmour.s3.amazonaws.com/"
+		var str_start = 0;
+		var fileName;
+		var str_end;
+		while(( str_start = block.indexOf("{!{>", str_start) ) > -1) {
+			str_end = block.indexOf("<}}", str_start);
+			if (str_end < 0) {
+				// Malformed HTML
+				console.log("- Warning: Wrong syntax for file insertion.")
+				return block;
+			}
+			str_start += 4;
+			fileName = block.substr(str_start,str_end-str_start);
+			block = block.replaceBetween(str_start-4, str_end+3, awsURL + fileName);
+		}
+		return block;
 	}
 } 
