@@ -1,4 +1,4 @@
-<nav id="jg-main-nav" class="navbar navbar-fixed-top" ng-controller="NavController">
+<nav id="jg-main-nav" class="navbar navbar-fixed-top" data-ng-controller="NavController">
 	<div class="container">
 		<div class="navbar-header">
 			<a href="/" class="navbar-brand">JG</a>
@@ -6,7 +6,10 @@
 		
 		<ul	class="nav navbar-nav">
 			<li ng-class="{ active: isActive('/') }"><a href="/">Home</a></li>
+			<li ng-class="{ active: isActive('/work') }"><a href="/work">Work</a></li>
+			<li ng-class="{ active: isActive('/history') }"><a href="/history">History</a></li>
 			<li ng-class="{ active: isActive('/about') }"><a href="/about">About</a></li>
+			<li ng-class="{ active: isActive('/contact') }"><a href="/contact">Contact</a></li>
 		</ul>
 	</div>
 </nav>

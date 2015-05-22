@@ -1,26 +1,25 @@
-<section id="jg-contact" class="row">
-	{{#if this.info_msg}}
-	<div id="jg-info-msg" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 blink-me {{this.info_class}}">
-		<h1>{{this.info_msg}}</h1>
+<section id="jg-contact" class="row" data-ng-controller="ContactController">
+	<div id="jg-info-msg" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3 blink-me jg-warning {{this.info_class}}" data-ng-class="{'jg-success':success, 'jg-error':error}">
+		<h1 ng-hide="feedbackMsg.length > 0">{{this.info_msg}}</h1>
+		<ul id="ng" class="hidden" ng-bind-html="feedbackMsg"></ul>
 	</div>
-	{{/if}}
-	<form method="post" action="/contact" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3">
+	<form id="jg-contact-form" method="post" action="/contact" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3" data-ng-submit="processForm($event)">
 		<fieldset>
 			<div id="jg-form-name">
-				<input type="text" name="name" value="{{this.retain.name}}" placeholder="Name" autocapitalize="words"/>
+				<input type="text" name="name" value="{{this.retain.name}}" placeholder="Name" autocapitalize="words" data-ng-model="formData.name" data-ng-change="checkEmpty()"/>
 			</div>
 			<div id="jg-form-email">
-				<input type="text" name="email" value="{{this.retain.email}}" placeholder="Email" autocapitalize="off" autocorrect="off"/>
+				<input type="text" name="email" value="{{this.retain.email}}" placeholder="Email" autocapitalize="off" autocorrect="off" data-ng-model="formData.email" data-ng-change="checkEmpty()"/>
 			</div>
 			<div id="jg-form-subject">
-				<input type="text" name="subject" value="{{this.retain.subject}}" placeholder="Subject"/>
+				<input type="text" name="subject" value="{{this.retain.subject}}" placeholder="Subject" data-ng-model="formData.subject" data-ng-change="checkEmpty()"/>
 			</div>
 			<div id="jg-form-message">
 				<label for="message">Message</label>
-				<textarea name="message" cols="40" rows="10" autocapitalize="sentences">{{this.retain.message}}</textarea>
+				<textarea name="message" cols="40" rows="10" autocapitalize="sentences" data-ng-model="formData.message" data-ng-change="checkEmpty()">{{this.retain.message}}</textarea>
 			</div>
 			<div>
-				<input name="submit" type="submit" value="Send"/>
+				<input name="submit" type="submit" value="Send"/><span id="jg-submit-msg" class="hidden">{[{infoMsg}]}</span>
 			</div>
 		</fieldset>
 	</form>
