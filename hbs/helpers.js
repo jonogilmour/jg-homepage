@@ -222,7 +222,8 @@ module.exports = {
 		if(block.fn) {
 			block = block.fn();
 		}
-		var awsURL = "http://public.jonogilmour.s3.amazonaws.com/"
+		//var awsURL = "http://public.jonogilmour.s3.amazonaws.com/"
+		var awsURL = "http://d28jo918bd9mf3.cloudfront.net/"
 		var str_start = 0;
 		var fileName;
 		var str_end;
