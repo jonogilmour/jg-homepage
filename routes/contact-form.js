@@ -109,14 +109,25 @@ function(req, res) {
 			
 			transporter.sendMail(options, function(error, info){
 			    if(error){
-			    	if(!aj) res.render(routeMap.contact, msgError);
-			    	res.sendStatus(500);
-			        return console.log(error);
+			    	if(!aj) {
+			    		res.status(500);
+			    		res.render(routeMap.contact, msgError);
+			    	}
+			    	else {
+			    		res.sendStatus(500);
+			    	}
+			    	console.log(error);
+			        return;
 			    }
 			    console.log("- Message sent: " + info.response);
-			    res.sendStatus(201);
+			    
+			    if(!aj) {
+			    	res.status(201);
+			    	res.render(routeMap.contact, msgSuccess);
+			    }
+			    else {
+			    	res.sendStatus(201);
+			    }	
 			});
-			
-			if(!aj) res.render(routeMap.contact, msgSuccess);
 	});
 }

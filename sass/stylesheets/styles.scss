@@ -41,6 +41,7 @@
 
 /* Variables */
 	// Pixel values
+	$xxs-screen-max: 350px;
 	$xs-screen-max: 767px;
 	$sm-screen-max: 991px;
 	$md-screen-max: 1199px;
@@ -535,10 +536,16 @@ li {
 	
 	/* IDs */
 	/* Classes */
+	.container {
+		@media screen and (max-width: $xs-screen-max) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 	.navbar-nav {
 		@media screen and (max-width: $xs-screen-max) {
-			margin-top: 0;
-			margin-bottom: 0;
+			margin: 0;
+			width: 100%;
 		}	
 		
 		li {
@@ -546,12 +553,21 @@ li {
 			
 			@media screen and (max-width: $xs-screen-max) {
 				height: 50px;
+				width: 20%;
 			}
 			
 			a {
 				@media screen and (max-width: $xs-screen-max) {
 					padding-top: 14px;
+					padding-left: 10px;
+					padding-right: 10px;
 					height: 100%;
+					width: 100%;
+					text-align: center;
+				}
+				
+				@media screen and (max-width: $xxs-screen-max) {
+					font-size: 12px;
 				}
 			}
 		}	

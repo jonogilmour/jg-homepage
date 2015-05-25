@@ -40,6 +40,7 @@ router.route("/contact")
 
 router.route("/:page")
 .get(function(req, res) {
+	console.log("Begin page load");
 	var page = routeMap[req.params.page];
 	if (page) {
 		// Page Redirects
@@ -49,6 +50,7 @@ router.route("/:page")
 		}
 		// Page Receives JSON Data
 		else if(page.data && typeof page.data === "string" && page.data.length) {
+			console.log("JSON data");
 			var layoutFile = routeMap.default_layout;
 			if(page.layout) layoutFile = page.layout;
 			// Read data file
@@ -72,6 +74,7 @@ router.route("/:page")
 			
 		}
 		else {
+			console.log("Standard page");
 			if (typeof page === "object") {
 				var layout;
 				if(page.layout) {
@@ -80,15 +83,17 @@ router.route("/:page")
 				else {
 					layoutFile = routeMap.default_layout;
 				}
-				
+				console.log("Layout loaded");
 				res.render(page.view, {layout: layoutFile});
 			}
 			else {
+				console.log("Loading default layout")
 				res.render(page, {layout: routeMap.default_layout});
 			}
 		}
 	}
 	else {
+		console.log("Page not found");
 		res.status(404);
 		
 		if (req.accepts('html')) {

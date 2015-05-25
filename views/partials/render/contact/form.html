@@ -3,8 +3,25 @@
 		<h1 ng-hide="feedbackMsg.length > 0">{{this.info_msg}}</h1>
 		<ul id="ng" class="hidden" ng-bind-html="feedbackMsg"></ul>
 	</div>
-	<form id="jg-contact-form" method="post" action="/contact" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3" data-ng-submit="processForm($event)">
-		<fieldset>
+	<script type="text/javascript">
+		function processForm(e) {
+			e.preventDefault();
+			if(typeof angular !== "undefined") {
+				angular.element('#jg-contact-form').scope().processForm();
+			}
+			return false;
+		}
+	</script>
+	<form id="jg-contact-form" method="post" action="/contact" class="col-xs-10 col-sm-8 col-md-6 col-xs-offset-1 col-sm-offset-2 col-md-offset-3" onsubmit="processForm(event)">
+		<script type="text/javascript">
+			(function() {
+				// Remove action and method attributes on form to fix some errors when JS is enabled
+				var e = document.getElementById("jg-contact-form");
+				e.removeAttribute("action");
+				e.removeAttribute("method");
+			})();
+		</script>
+		<fieldset data-ng-disabled="isProcessing">
 			<div id="jg-form-name">
 				<input type="text" name="name" value="{{this.retain.name}}" placeholder="Name" autocapitalize="words" data-ng-model="formData.name" data-ng-change="checkEmpty()"/>
 			</div>
