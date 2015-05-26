@@ -108,6 +108,11 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 );
 }	
 
+@mixin opacity($amt) {
+	opacity: $amt;
+    filter: alpha(opacity=$amt * 100);
+}
+
 @mixin placeholder($colour) {
 	&::-webkit-input-placeholder {
 	   color: $colour;
@@ -143,6 +148,160 @@ $text-white: #FFF;
 	
 	$text-light: #AEBDCA;
 	$bg-light: #D5DBDF;
+	
+	$success: #183D15;
+	$warning: #A19542;
+	$error: #882F2F;
+	
+	background-color: $bg-dark;
+	
+	a {
+		&:hover {
+			color: $text-light;
+		}
+	}
+	
+	img {
+		@include opacity(0.7);
+	}
+	
+	input, textarea {
+		background-color: $bg-dark;
+		color: $text-light;
+		border: none;
+		
+		&[type="submit"] {
+			background-color: $success;
+		}
+		
+		@include placeholder($text-med);
+	}
+	
+	.dark {
+		background-color: $bg-dark;
+		color: $text-dark;
+				
+		a {
+			color: $text-dark;
+			
+			&:hover {
+				background-color: $bg-dark;
+				color: $text-light;
+			}
+		}
+		
+		.active, .active a:hover {
+			background-color: $bg-light;
+			color: $text-dark;
+		}
+	}
+	
+	.med {
+		background-color: $bg-med;
+		color: $text-med;
+		
+		a {
+			color: $text-med;
+			
+			&:hover {
+				color: $text-light;
+			}
+			
+			&.btn {
+				background-color: $text-med;
+				color: $bg-med;
+				
+				&:hover {
+					background-color: $text-light;
+					color: $bg-med;
+				}
+			}
+		}
+	}
+	
+	.med-light {
+		background-color: $bg-med-light;
+		color: $text-med-light;
+		
+		a {
+			color: $text-med-light;
+			
+			&:hover {
+				color: $text-light;
+			}
+			
+			&.btn {
+				background-color: $text-med-light;
+				color: $bg-med-light;
+				
+				&:hover {
+					background-color: $text-light;
+					color: $bg-med-light;
+				}
+			}
+		}
+		
+		.hover:hover, &.hover:hover {
+			a {
+				color: $text-light;
+			}
+		}
+	}
+	
+	.light {
+		background-color: $bg-light;
+		color: $text-light;
+		
+		a {
+			color: $text-light;
+		}
+	}
+	
+	.section-heading {
+		//border-top: 2px solid $bg-dark;
+	}
+	
+	.jg-warning, #jg-submit-msg {
+		color: $warning;
+	}
+	
+	.jg-error {
+		color: $error;
+	}
+	
+	.jg-success {
+		color: $success;
+	}
+	
+	// Error pages
+	#jg-404 {
+		color: $error;
+	}
+	
+	#jg-500 {
+		color: $warning;
+	}
+	
+	@media screen and (max-width: $xs-screen-max) {
+		#jg-history-panel {
+			background-color: $bg-med;
+		}
+	}
+}
+
+// Bubblegum	
+#bubblegum {
+	$bg-dark: #51C7B7;
+	$text-dark: #FFF;
+	
+	$bg-med: #EE369B;
+	$text-med: #FFF;
+	
+	$bg-med-light: #FF6BAD;
+	$text-med-light: #FFF;
+	
+	$text-light: #EEE;
+	$bg-light: #F2D5D3;
 	
 	$success: #183D15;
 	$warning: #A19542;
@@ -279,30 +438,8 @@ $text-white: #FFF;
 		}
 	}
 }
-/*
-$red-colour: #dd5757;
-$red-light-colour: #E26D6D;
-$red-dark-colour: #ab0505;
-$happy-colour: #3ACEF2;
-$success-colour: #69D76D;
-$warning-colour: #FCE46A;
-$default-colour: #666;
-$safe-colour: #41AB45;
-$purple-colour: #663D67;
-$purple-light-colour: #784D79;
-$teal-colour: #22698E;
-$teal-med-light-colour: #2E769B;
-$teal-light-colour: #3185b1;
-$green-colour: #3E883C;
-$green-med-light-colour: #489846;
-$green-light-colour: #57A055;
 
-// Greys
-$light-colour: #fff;
-$med-light-colour: #999;
-$med-colour: #666;
-$dark-colour: #333;*/
-	
+// Red-Green-Blue-Purple (Default)	
 #rgbp {
 	$bg-dark: #666;
 	$text-dark: #fff;
@@ -659,7 +796,15 @@ li {
 	  margin-top: 4px;
 }
 
+option, select {
+	color: black;
+}
+
 /* Classes */
+
+.navbar {
+	border: none;
+}
 
 .jg-pad-hori {
 	padding-left: 30px;
