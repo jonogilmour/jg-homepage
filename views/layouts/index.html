@@ -5,7 +5,29 @@
 			{{> non-render/head}}
 		{{/file_replace_aws}}
 	</head>
-	<body>
+	<body id="rgbp">
+		<script type="application/javascript">
+			// Set the theme from a cookie
+			document.body.style.display = "hidden";
+			
+			function getCookie(cname) {
+			    var name = cname + "=";
+			    var ca = document.cookie.split(';');
+			    for(var i=0; i<ca.length; i++) {
+			        var c = ca[i];
+			        while (c.charAt(0)==' ') c = c.substring(1);
+			        if (c.indexOf(name) == 0) return c.substring(name.length+3,c.length-3);
+			    }
+			    return "";
+			}
+			var themeID = getCookie("theme");
+			
+			if (themeID.length) {
+				document.body.id = themeID;	
+			}	
+			
+			document.body.style.display = "block";
+		</script>
 		{{> render/template/header}}
 		<div class="container-fluid" id="jg-main-body">
 				{{{body}}} 

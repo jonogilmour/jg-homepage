@@ -31,6 +31,27 @@
 			"date" : "2008-2010",
 			"responsibilities" : ["Setting up of computers, installing software and operating systems", "Organisation of conference room technology", "Database work using Microsoft Access",	"Website work including instructional videos and enhancements",	"Customer liaison",	"Reception work"],
 			"description" : "<p>In this job I served a multitude of roles, which included everything from data-entry to maintenance of the premises.</p><p>I was responsible for painting a large portion of the building interior, clearing out storage rooms, and setting up computer systems and software for employee use.</p><p>I also worked in the kitchen, serving coffee and refreshments to customers, and in the reception as an administrative assistant.</p>"
+		},
+		{
+			"company" : "Pentorium Blog (www.pentorium.com)",
+			"title" : "Owner and Creator",
+			"date" : "",
+			"responsibilities" : ["Worked directly with international brands (including Kaweco, Massdrop, Monsieur Notebook, and JustWrite) to test and review products", "Regular content creation for blog and YouTube channel", "Regular posting on social network channels (Twitter, Facebook)", "Selling/trading of products"],
+			"description" : "<p>Pentorium was born from my fascination with pens and high quality stationery, a love for good design, and my ever changing organisational habits. Initially it was simply an outlet for my thoughts, but it has turned into a much larger project over the past couple of years.</p><p>The site garners upwards of 1000 visits every day, and I have worked with several international brands doing sponsored posts and other work.</p><p>The blog is based on Wordpress, giving me a lot of experience with the platform, as well as broadening my knowledge of PHP.</p>"
+		},
+		{
+			"company" : "Photographer",
+			"title" : "Professional and freelance work",
+			"date" : "",
+			"responsibilities" : ["Paid portraiture sessions for local businesses", "Event photographer, including weddings and parties", "Product photography", "Fashion photographer for www.confettiavenue.com"],
+			"description" : "<p>Photography began as a hobby, but over the years it has become much more than that.</p><p>As well as being the photographer on the blog Confetti Avenue, I have done portraiture sessions for businesses to use on their marketing materials, regularly taking photos of products at Untapped Fine Wines, and shot events such as weddings and parties.</p><p>My website at www.jongphotography.com showcases some of my past work.</p>"
+		},
+		{
+			"company" : "Web Developer",
+			"title" : "Freelance work",
+			"date" : "",
+			"responsibilities" : ["Per-job based web development work", "Working with PHP, HTML, CSS, and Javascript", "Wordpress and other platforms"],
+			"description" : "<p>I do freelance work in addition to my full-time job as a web developer.</p><p>Usually these jobs are small to medium sized, involving anything from setting up an online store to sell digital products, to adding and customising content for Wordpress. No job is too big or too small, and I love taking opportunities to broaden my experience in any way I can.</p>"
 		}
 	],
 	"dev" : 		[
@@ -386,26 +407,6 @@
 					"description" : "<p>Having not done a whole lot of TDD outside of the odd assert statement in C programs, I was eager to begin learning how to write code that is well tested.</p><p>Mocha is a brilliant BDD framework written in Javascript that, when combined with natural-language assertion libraries like Should, allows for expressive and meaningful testing that saves a lot of frustration and cuts down on bugs.</p><p>I developed this site by employing BDD principles, by testing first, then coding to pass, then testing again. The result has been less unexpected results in my code, and a better understanding of how to write better, more concise code that degrades gracefully.</p>"
 				}
 			]
-		}
-	],
-	"other" : 		[
-		{
-			"title" : "Pentorium Blog (www.pentorium.com)",
-			"sub_title" : "Owner and Creator",
-			"responsibilities" : ["Worked directly with international brands (including Kaweco, Massdrop, Monsieur Notebook, and JustWrite) to test and review products", "Regular content creation for blog and YouTube channel", "Regular posting on social network channels (Twitter, Facebook)", "Selling/trading of products"],
-			"description" : "<p>Pentorium was born from my fascination with pens and high quality stationery, a love for good design, and my ever changing organisational habits. Initially it was simply an outlet for my thoughts, but it has turned into a much larger project over the past couple of years.</p><p>The site garners upwards of 1000 visits every day, and I have worked with several international brands doing sponsored posts and other work.</p><p>The blog is based on Wordpress, giving me a lot of experience with the platform, as well as broadening my knowledge of PHP.</p>"
-		},
-		{
-			"title" : "Photographer",
-			"sub_title" : "Professional and freelance work",
-			"responsibilities" : ["Paid portraiture sessions for local businesses", "Event photographer, including weddings and parties", "Product photography", "Fashion photographer for www.confettiavenue.com"],
-			"description" : "<p>Photography began as a hobby, but over the years it has become much more than that.</p><p>As well as being the photographer on the blog Confetti Avenue, I have done portraiture sessions for businesses to use on their marketing materials, regularly taking photos of products at Untapped Fine Wines, and shot events such as weddings and parties.</p><p>My website at www.jongphotography.com showcases some of my past work.</p>"
-		},
-		{
-			"title" : "Web Developer",
-			"sub_title" : "Freelance work",
-			"responsibilities" : ["Per-job based web development work", "Working with PHP, HTML, CSS, and Javascript", "Wordpress and other platforms"],
-			"description" : "<p>I do freelance work in addition to my full-time job as a web developer.</p><p>Usually these jobs are small to medium sized, involving anything from setting up an online store to sell digital products, to adding and customising content for Wordpress. No job is too big or too small, and I love taking opportunities to broaden my experience in any way I can.</p>"
 		}
 	]
 }

@@ -3,7 +3,8 @@ var AWS = require("aws-sdk");
 var s3 = new AWS.S3();
 var fs = require("fs");
 try {
-	var pathsMap = require(path.join("..","data","paths.json"));	
+	var pathsMap = require(path.join("..","data","paths.json"));
+	var themesMap = require(path.join("..","data","themes.json"));	
 } catch (e) {
 	console.log(e);
 }
@@ -239,5 +240,28 @@ module.exports = {
 			block = block.replaceBetween(str_start-4, str_end+3, awsURL + fileName);
 		}
 		return block;
+	},
+	themeOptions: function() {
+		if(themesMap) {
+			var htmlOut = "";
+			var first = true;
+			themesMap.themes.every(function(theme) {
+				if(typeof theme !== "object" && !checkString(theme.id) && !checkString(theme.name)) {
+					htmlOut = "theme-error";
+					return false;
+				}
+				if(first) {
+					htmlOut += "<option selected=\"selected\" value=\"" + theme.id + "\">" + theme.name + "</option>";
+					first = false;
+				}
+				else {
+					htmlOut += "<option value=\"" + theme.id + "\">" + theme.name + "</option>";	
+				}
+					
+				return true;
+			});
+			return htmlOut;
+		}
+		return "";
 	}
 } 

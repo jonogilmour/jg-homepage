@@ -1,0 +1,12 @@
+{
+	"themes" : [
+		{
+			"name" :	"RGBP",
+			"id" :	"rgbp"
+		},
+		{
+			"name" :	"Midnight",
+			"id" :	"midnight"
+		}
+	]
+}

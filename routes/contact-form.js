@@ -5,22 +5,22 @@ var AWS = require("aws-sdk");
 var s3 = new AWS.S3();
 var routeMap = require("./routes.json");
 
+/**
+ * Gives functionality to the contact form, with descriptive error messages and
+ * facilities to accomodate both Javascript AJAX and JS-less requests.
+ * 
+ * Retrieves mail authentication data securely from S3
+ */
 module.exports = 
 function(req, res) {
 	s3.getObject({Bucket: "heroku.jonogilmour", Key: "auth.json"},
 		function(err, data) {
+			
+			// Check if this request was done via AJAX
 			var aj = req.body.ajaxOn;
 			
 			if(!aj) {
 				// If not done via AJAX, we do validation and data retention on the server
-				var infoRetain = {
-					name: req.body.name,
-					email: req.body.email,
-					subject: req.body.subject,
-					message: req.body.message
-				};
-				
-				// Contact email message
 				var msgSuccess = {
 					info_msg: "Message sent!",
 					info_class: "jg-success",
@@ -80,8 +80,8 @@ function(req, res) {
 					return;
 				}
 				
-				// Form validation
-				if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email)) {
+				// Form validation (email)
+				if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/.test(req.body.email)) {
 					msgWarn.info_msg = "Please check your email address"
 					res.render(routeMap.contact, msgWarn);
 					return;
@@ -93,20 +93,21 @@ function(req, res) {
 			// Grab the authentication data
 			var authFile = JSON.parse(data.Body.toString());
 			
-			//Setup Nodemailer transport
+			// Setup Nodemailer transport
 			var transporter = nodemailer.createTransport('SMTP', {
 				service: 'Gmail',
 				auth: authFile.auth
 			});
 			
-			//Mail options
+			// Mail options
 			var options = {
-			  from: req.body.name + " <jonogapi@gmail.com>", //grab form data from the request body object
+			  from: req.body.name + " <jonogapi@gmail.com>",
 			  to: authFile.to,
 			  subject: "JG Get in Contact: " + req.body.subject,
 			  text: "From: " + req.body.name + " <"+req.body.email+">\nMessage:\n\n" + req.body.message
 			};
 			
+			// Send email with callback
 			transporter.sendMail(options, function(error, info){
 			    if(error){
 			    	if(!aj) {

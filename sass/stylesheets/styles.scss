@@ -1,23 +1,23 @@
 // test
 .left {
-	border-right: 1px solid #333;
-	border-left: 1px solid #333;
+//border-right: 1px solid #333;
+//border-left: 1px solid #333;
 }
 .right {
-	border-left: 1px solid #333;
-	border-right: 1px solid #333;
+//border-left: 1px solid #333;
+//border-right: 1px solid #333;
 }
 .bounds-red {
-	border-left: 1px solid #f01616;
-	border-right: 1px solid #f01616;
+//border-left: 1px solid #f01616;
+//border-right: 1px solid #f01616;
 }
 .bounds-blue {
-	border-left: 1px solid #2236e9;
-	border-right: 1px solid #2236e9;
+//border-left: 1px solid #2236e9;
+//border-right: 1px solid #2236e9;
 }
 .bounds-green {
-	border-left: 1px solid #1de52c;
-	border-right: 1px solid #1de52c;
+//border-left: 1px solid #1de52c;
+//border-right: 1px solid #1de52c;
 }
 
 /*
@@ -80,7 +80,7 @@
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
       -ms-border-radius: $radius;
-          border-radius: $radius;
+         //border-radius: $radius;
 }
 
 @mixin blinker($time) {
@@ -96,6 +96,506 @@
     animation-duration: $time;
     animation-timing-function: linear;
 }
+
+@mixin gradient-bg($start, $end) {
+	background: $end;
+	background: -moz-linear-gradient(top, $start 0%,$end 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$end));
+	background: -webkit-linear-gradient(top, $start 0%, $end 100%);
+	background: -o-linear-gradient(top, $start 0%, $end 100%);
+	background: -ms-linear-gradient(top, $start 0%, $end 100%);
+	background: linear-gradient(to bottom, $start 0%, $end 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=0 );
+}	
+
+@mixin placeholder($colour) {
+	&::-webkit-input-placeholder {
+	   color: $colour;
+	}
+	
+	&:-moz-placeholder {
+		color: $colour;  
+	}
+	
+	&::-moz-placeholder {
+	   color: $colour;  
+	}
+	
+	&:-ms-input-placeholder {  
+	   color: $colour;  
+	}
+}
+
+	// THEMES //
+	
+$text-white: #FFF; 	
+
+// Midnight	
+#midnight {
+	$bg-dark: #111013;
+	$text-dark: #394566;
+	
+	$bg-med: #121828;
+	$text-med: #6F7689;
+	
+	$bg-med-light: #172037;
+	$text-med-light: #526083;
+	
+	$text-light: #AEBDCA;
+	$bg-light: #D5DBDF;
+	
+	$success: #183D15;
+	$warning: #776240;
+	$error: #882F2F;
+	
+	background-color: $bg-dark;
+	
+	a {
+		&:hover {
+			color: $text-light;
+		}
+	}
+	
+	input, textarea {
+		background-color: $bg-dark;
+		color: $text-light;
+		border: none;
+		
+		&[type="submit"] {
+			background-color: $success;
+		}
+		
+		@include placeholder($text-med);
+	}
+	
+	.dark {
+		background-color: $bg-dark;
+		color: $text-dark;
+				
+		a {
+			color: $text-dark;
+			
+			&:hover {
+				background-color: $bg-dark;
+				color: $text-light;
+			}
+		}
+		
+		.active, .active a:hover {
+			background-color: $bg-light;
+			color: $text-dark;
+		}
+	}
+	
+	.med {
+		background-color: $bg-med;
+		color: $text-med;
+		
+		a {
+			color: $text-med;
+			
+			&:hover {
+				color: $text-light;
+			}
+			
+			&.btn {
+				background-color: $text-med;
+				color: $bg-med;
+				
+				&:hover {
+					background-color: $text-light;
+					color: $bg-med;
+				}
+			}
+		}
+	}
+	
+	.med-light {
+		background-color: $bg-med-light;
+		color: $text-med-light;
+		
+		a {
+			color: $text-med-light;
+			
+			&:hover {
+				color: $text-light;
+			}
+			
+			&.btn {
+				background-color: $text-med-light;
+				color: $bg-med-light;
+				
+				&:hover {
+					background-color: $text-light;
+					color: $bg-med-light;
+				}
+			}
+		}
+		
+		.hover:hover, &.hover:hover {
+			a {
+				color: $text-light;
+			}
+		}
+	}
+	
+	.light {
+		background-color: $bg-light;
+		color: $text-light;
+		
+		a {
+			color: $text-light;
+		}
+	}
+	
+	.section-heading {
+		//border-top: 2px solid $bg-dark;
+	}
+	
+	.jg-warning, #jg-submit-msg {
+		color: $warning;
+	}
+	
+	.jg-error {
+		color: $error;
+	}
+	
+	.jg-success {
+		color: $success;
+	}
+	
+	// Error pages
+	#jg-404 {
+		color: $error;
+	}
+	
+	#jg-500 {
+		color: $warning;
+	}
+	
+	@media screen and (max-width: $xs-screen-max) {
+		#jg-history-panel {
+			background-color: $bg-med;
+		}
+	}
+}
+/*
+$red-colour: #dd5757;
+$red-light-colour: #E26D6D;
+$red-dark-colour: #ab0505;
+$happy-colour: #3ACEF2;
+$success-colour: #69D76D;
+$warning-colour: #FCE46A;
+$default-colour: #666;
+$safe-colour: #41AB45;
+$purple-colour: #663D67;
+$purple-light-colour: #784D79;
+$teal-colour: #22698E;
+$teal-med-light-colour: #2E769B;
+$teal-light-colour: #3185b1;
+$green-colour: #3E883C;
+$green-med-light-colour: #489846;
+$green-light-colour: #57A055;
+
+// Greys
+$light-colour: #fff;
+$med-light-colour: #999;
+$med-colour: #666;
+$dark-colour: #333;*/
+	
+#rgbp {
+	$bg-dark: #666;
+	$text-dark: #fff;
+	
+	$bg-med: #3ACEF2;
+	$text-med: #fff;
+	
+	$bg-med-light: #22698E;
+	$text-med-light: #fff;
+	
+	$text-light: #999;
+	$bg-light: #D5DBDF;
+	
+	$error: #882F2F;
+	$success: #69D76D;
+	$warning: #FCE46A;
+	
+	$red: #dd5757;
+	$red-light: #E26D6D;
+	$red-dark: #ab0505;
+	
+	$purple: #663D67;
+	$purple-light: #784D79;
+	
+	$teal: #22698E;
+	$teal-med: #2E769B;
+	$teal-light: #3185b1;
+	
+	$green: #3E883C;
+	$green-med: #489846;
+	$green-light: #41AB45;
+	
+	$btn-grey: #3D3D3D;
+	$btn-light-grey: #5f5f5f;
+	
+	
+	// Standard set
+	
+	background-color: $bg-dark;
+	
+	a {
+		&:hover {
+			color: $text-light;
+		}
+	}
+	
+	input, textarea {
+		background-color: $bg-dark;
+		color: $text-light;
+		border: none;
+		
+		&[type="submit"] {
+			background-color: $success;
+		}
+		
+		@include placeholder($text-med);
+	}
+	
+	.dark {
+		background-color: $bg-dark;
+		color: $text-dark;
+				
+		a {
+			color: $text-dark;
+			
+			&:hover {
+				background-color: #7B7B7B;
+			}
+		}
+		
+		.active {
+			background-color: #707070;
+		}
+		
+		.navbar-brand {
+			&:hover {
+				background-color: $bg-dark;
+				color: #999;
+			}
+		}
+	}
+	
+	.med {
+		background-color: $bg-med;
+		color: $text-med;
+		
+		a {
+			color: $text-med;
+			
+			&:hover {
+				color: $text-light;
+			}
+			
+			&.btn {
+				background-color: #337ab7;
+				color: $text-med;
+				
+				&:hover {
+					background-color: #135893;
+				}
+			}
+		}
+	}
+	
+	.med-light {
+		background-color: $bg-med-light;
+		color: $text-med-light;
+		
+		a {
+			color: $text-med-light;
+			
+			&.btn {
+				background-color: $text-med-light;
+				color: $bg-med-light;
+				
+				&:hover {
+					background-color: $text-light;
+					color: $bg-med-light;
+				}
+			}
+		}
+		
+		.hover:hover, &.hover:hover {
+			a {
+				color: $text-light;
+			}
+		}
+	}
+	
+	.light {
+		background-color: $bg-light;
+		color: $text-light;
+		
+		a {
+			color: $text-light;
+		}
+	}
+	
+	.section-heading {
+		//border-top: 2px solid $bg-dark;
+	}
+	
+	.jg-warning, #jg-submit-msg {
+		color: $warning;
+	}
+	
+	.jg-error {
+		color: $error;
+	}
+	
+	.jg-success {
+		color: $success;
+	}
+	
+	
+	// Home panels
+	
+	#jg-work-panel {
+		&:hover {
+			background-color: $red;
+			a {
+				color: $text-med-light;
+			}
+		}
+	}
+	#jg-history-panel {
+		&:hover {
+			background-color: $green-light;
+			a {
+				color: $text-med-light;
+			}
+		}
+	}
+	#jg-about-panel {
+		&:hover {
+			background-color: $purple;
+			a {
+				color: $text-med-light;
+			}
+		}
+	}
+	
+	.jg-project {
+		a.btn {
+			background-color: $btn-grey;
+			color: white;
+			
+			&:hover {
+				background-color: $btn-light-grey;
+				color: white;
+			}
+		}
+	}
+	
+	#jg-education {
+		.jg-left {
+			border-right: 1px solid $red-light;
+		}
+		.jg-right {
+			border-left: 1px solid $red-light;
+		}
+	}
+	
+	
+	// Background variations
+	
+	//Red
+	#jg-work-banner, #jg-education  {
+		background-color: $red;
+	}
+	
+	.jg-education {
+		background-color: $red-light;
+	}
+	
+	//Green
+	#jg-history-banner {
+		background-color: $green-light;
+	}
+	
+	.jg-project-pre.med, .minor.med {
+		background-color: $green;
+	}
+	
+	.minor.med-light {
+		background-color: $green-med;
+	}
+	
+	//Teal
+	.major.med, .jg-job.med {
+		background-color: $teal-light;
+	}
+	
+	//Purple
+	.jg-dev, .jg-dev-category.med-light, #jg-me, #jg-contact {
+		background-color: $purple-light;
+	}
+	
+	.jg-dev-category.med, #jg-about-banner {
+		background-color: $purple;
+	}
+	
+	// Contact form
+	input, textarea {
+		background-color: white;
+		
+		@include placeholder(#777);
+		
+		&[type="submit"] {
+			background-color: $green;
+			color: white;
+			
+			&:hover {
+				background-color: #57A055;
+			}
+		}
+	}
+	
+	// Error pages
+	
+	#jg-404 {
+		background-color: $red;
+		color: white;
+	}
+	
+	#jg-500 {
+		background-color: $teal;
+		color: white;
+	}
+	
+	// Media
+	
+	@media screen and (max-width: $xs-screen-max) {
+		#jg-work-panel {
+			background-color: $red;
+		}
+		#jg-history-panel {
+			background-color: $green-light;
+		}
+		#jg-about-panel {
+			background-color: $purple;
+		}
+		#jg-education .jg-left {
+			padding-bottom: 30px;
+			margin-bottom: 0;
+		}
+		#jg-education .jg-right {
+			background-color: $red-light;
+		}
+	}
+}
+	
+
 
 /* Other Settings */
 @viewport{
@@ -127,21 +627,16 @@
 
 /* Elements */
 body {
-	background-color: $default-colour;
+	//background-color: $default-colour;
 	width: 100%;
 }
 
 footer {
 	padding: 30px 0;
-	color: #f3f3f3;
+//color: #f3f3f3;
 	
 	p {
 		margin: 0;
-	}
-	
-	#social {
-		border-left: 1px solid #333;
-		font-size: 13px;
 	}
 }
 
@@ -181,10 +676,10 @@ li {
 }
 
 .jg-project-pre {
-	color: $light-colour;
+//color: $light-colour;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	border-top: 2px solid $default-colour;
+//border-top: 2px solid $default-colour;
 	
 	h1 {
 		margin-top: 0;
@@ -198,42 +693,42 @@ li {
 	}
 	
 	&.major {
-		background-color: $teal-med-light-colour;
+		//background-color: $teal-med-light-colour;
 		h1 {
-			color: $happy-colour;
+		//color: $happy-colour;
 		}
 	}
 	&.minor {
-		background-color: $green-colour;
+		//background-color: $green-colour;
 		h1 {
-			color:  $success-colour;
+		//color:  $success-colour;
 		}	
 	}
 }
 
 .jg-project {
-	background-color: $red-light-colour;
-	color: $light-colour;
+	//background-color: $red-light-colour;
+//color: $light-colour;
 	padding-top: 20px;
 	padding-bottom: 30px;
 	
 	&.jg-even {
 		
 		&.major {
-			background-color: $teal-med-light-colour;
+			//background-color: $teal-med-light-colour;
 		}
 		&.minor {
-			background-color: $green-colour;	
+			//background-color: $green-colour;	
 		}
 	}
 	
 	&.jg-odd {
 		
 		&.major {
-			background-color: $teal-light-colour;
+			//background-color: $teal-light-colour;
 		}
 		&.minor {
-			background-color: $green-light-colour;	
+			//background-color: $green-light-colour;	
 		}
 	}
 	
@@ -282,12 +777,12 @@ li {
 		}
 		
 		.btn {
-			color: #FFF;
-			background-color: #3D3D3D;
-			border-color: none;
+		//color: #FFF;
+			//background-color: #3D3D3D;
+		//border-color: none;
 			
 			&:hover {
-				background-color: #5f5f5f;
+				//background-color: #5f5f5f;
 			}
 			
 			@media screen and (max-width: $xs-screen-max) {
@@ -301,10 +796,10 @@ li {
 }
 
 .jg-history-pre {
-	color: $light-colour;
+//color: $light-colour;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	border-top: 2px solid $default-colour;
+//border-top: 2px solid $default-colour;
 	
 	h1 {
 		margin-top: 0;
@@ -318,33 +813,33 @@ li {
 	}
 	
 	&.jg-education {
-		background-color: $red-light-colour;
+		//background-color: $red-light-colour;
 		h1 {
-			color: $light-colour;
+		//color: $light-colour;
 		}
 	}
 	&.jg-jobs {
-		background-color: $teal-light-colour;
+		//background-color: $teal-light-colour;
 		h1 {
-			color:  $light-colour;
+		//color:  $light-colour;
 		}	
 	}
 	&.jg-dev {
-		background-color: $purple-light-colour;
+		//background-color: $purple-light-colour;
 		h1 {
-			color:  $light-colour;
+		//color:  $light-colour;
 		}	
 	}
 	&.jg-others {
-		background-color: $green-light-colour;
+		//background-color: $green-light-colour;
 		h1 {
-			color:  $light-colour;
+		//color:  $light-colour;
 		}	
 	}
 }
 
 .jg-job {
-	color: $light-colour;
+//color: $light-colour;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	
@@ -360,11 +855,11 @@ li {
 	}
 	
 	&.jg-odd {
-		background-color: $teal-colour;
+	//background-color: $teal-colour;
 	}
 	
 	&.jg-even {
-		background-color: $teal-light-colour;
+	//background-color: $teal-light-colour;
 	}
 	
 	#jg-responsibilities {
@@ -376,7 +871,7 @@ li {
 
 
 .jg-other {
-	color: $light-colour;
+//color: $light-colour;
 	padding-top: 30px;
 	padding-bottom: 30px;
 	
@@ -392,11 +887,11 @@ li {
 	}
 	
 	&.jg-odd {
-		background-color: $green-colour;
+	//background-color: $green-colour;
 	}
 	
 	&.jg-even {
-		background-color: $green-light-colour;
+	//background-color: $green-light-colour;
 	}
 	
 	#jg-responsibilities {
@@ -407,7 +902,7 @@ li {
 }
 
 .active {
-	background-color: #707070;
+//background-color: #707070;
 }
 
 /* Identifiers */
@@ -416,7 +911,7 @@ li {
 }
 
 #jg-main-banner, #jg-work-banner, #jg-history-banner, #jg-about-banner {
-	color: $light-colour;
+	//color: $light-colour;
 	
 	h1 {
 		font-size: 48px;
@@ -429,11 +924,11 @@ li {
 	
 	#jg-btn {
 		margin-top: 15px;
-		color: #fff;
-		background-color: #337ab7;
+		//color: #fff;
+		//background-color: #337ab7;
 		
 		&:hover {
-			background-color: #135893;
+			//background-color: #135893;
 		}
 		
 		&:active {
@@ -450,21 +945,21 @@ li {
 
 #jg-main-banner {
 	padding: 80px 0;
-	background-color: $happy-colour;
+//background-color: $happy-colour;
 }
 
 #jg-work-banner {
-	background-color: $red-colour;
+//background-color: $red-colour;
 	padding: 30px 0;
 }
 
 #jg-history-banner {
-	background-color: $safe-colour;
+//background-color: $safe-colour;
 	padding: 30px 0;
 }
 
 #jg-about-banner {
-	background-color: $purple-colour;
+//background-color: $purple-colour;
 	padding: 30px 0;
 }
 
@@ -473,39 +968,39 @@ li {
 	#jg-work-panel {
 		
 		@media screen and (max-width: $xs-screen-max) {
-			background-color: $red-colour;
+			//background-color: $red-colour;
 		}
 		
 		&:hover {
-			background-color: $red-colour;
+			//background-color: $red-colour;
 		}
 	}
 	
 	#jg-history-panel {
 		
 		@media screen and (max-width: $xs-screen-max) {
-			background-color: $safe-colour;
+			//background-color: $safe-colour;
 		}
 		
 		&:hover {
-			background-color: $safe-colour;
+			//background-color: $safe-colour;
 		}
 	}
 	
 	#jg-about-panel {
 		
 		@media screen and (max-width: $xs-screen-max) {
-			background-color: $purple-colour;
+			//background-color: $purple-colour;
 		}
 		
 		&:hover {
-			background-color: $purple-colour;
+			//background-color: $purple-colour;
 		}
 	}
 	
 	/* Classes */
 	.jg-detail-panel {
-		background: $teal-colour;
+		//background: $teal-colour;
 		
 		@media screen and (min-width: $sm-screen-min) {
 			min-height: 180px;
@@ -514,7 +1009,7 @@ li {
 		
 		a {
 			text-decoration: none;
-			color: #fff;
+		//color: #fff;
 			
 			&:hover {
 			}
@@ -527,8 +1022,8 @@ li {
 }
 
 #jg-main-nav {
-	background-color: $default-colour;
-	border: none;
+	//background-color: $default-colour;
+//border: none;
 	
 	@media screen and (max-width: $xs-screen-max) {
 		min-height: 0px;
@@ -557,6 +1052,10 @@ li {
 			}
 			
 			a {
+				@media screen and (min-width: $sm-screen-min) {
+					text-align: center;
+				}
+				
 				@media screen and (max-width: $xs-screen-max) {
 					padding-top: 14px;
 					padding-left: 10px;
@@ -582,11 +1081,11 @@ li {
 	/* Elements */
 	a {
 		text-shadow: none;
-		color: $light-colour;
+	//color: $light-colour;
 		
 		&.navbar-brand {
 			&:hover {
-				color: $med-light-colour;
+			//color: $med-light-colour;
 			}
 		}
 	}
@@ -594,36 +1093,36 @@ li {
 	ul a {
 		
 		&:hover, &:focus {
-			background: #7B7B7B;
+		//background-color: #7B7B7B;
 		}
 	}
 }
 
 #jg-404 {
-	background-color: $red-colour;
+//background-color: $red-colour;
 	h1 {
-		color: #fff;
+	//color: #fff;
 		font-size: 110px;
 	}
 	h2 {
-		color: #fff;
+	//color: #fff;
 	}
 }
 
 #jg-500 {
-	background-color: $teal-colour;
+//background-color: $teal-colour;
 	h1 {
-		color: #fff;
+	//color: #fff;
 		font-size: 110px;
 	}
 	h2 {
-		color: #fff;
+	//color: #fff;
 	}
 }
 
 #jg-education {
-	background-color: $red-colour;
-	color: $light-colour;
+//background-color: $red-colour;
+//color: $light-colour;
 	padding-bottom: 30px;
 	/* Column height fix */
 	overflow: hidden;
@@ -658,35 +1157,35 @@ li {
 	
 	@media screen and (min-width: $sm-screen-min) {
 		.jg-left {
-			border-right: 1px solid $red-light-colour;
+		//border-right: 1px solid $red-light-colour;
 		}
 		
 		.jg-right {
-			border-left: 1px solid $red-light-colour;			
+		//border-left: 1px solid $red-light-colour;			
 		}
 	}
 	
 	@media screen and (max-width: $xs-screen-max) {
 		.jg-right {
-			background-color: $red-light-colour;
+		//background-color: $red-light-colour;
 		}
 	}
 }
 
 #jg-dev {
 	.jg-dev-category {
-		color: $light-colour;
+	//color: $light-colour;
 		padding-top: 30px;
 		padding-bottom: 30px;
 		
 		
 		
 		&.jg-odd {
-			background-color: $purple-colour;
+		//background-color: $purple-colour;
 		}
 		
 		&.jg-even {
-			background-color: $purple-light-colour;
+		//background-color: $purple-light-colour;
 		}
 		
 		.jg-dev-entry {
@@ -718,6 +1217,8 @@ li {
 				
 				li {
 					list-style: none;
+					text-indent: -0.8em;
+					padding-left: 1em;
 					a {
 						padding-left: 5px;
 					}
@@ -737,10 +1238,10 @@ li {
 				}
 				
 				a {
-					color: $light-colour;
+				//color: $light-colour;
 					
 					&:hover {
-						color: $med-light-colour;
+					//color: $med-light-colour;
 						text-decoration: none;
 					}
 				}
@@ -752,8 +1253,8 @@ li {
 #jg-me {
 	padding-top: 30px;
 	padding-bottom: 30px;
-	background-color: $purple-light-colour;
-	color: $light-colour;
+//background-color: $purple-light-colour;
+//color: $light-colour;
 	
 	#jg-info {
 		margin-top: 15px;
@@ -787,8 +1288,8 @@ li {
 }
 
 #jg-contact {
-	background-color: $purple-light-colour;
-	color: $light-colour;
+//background-color: $purple-light-colour;
+//color: $light-colour;
 	text-align: center;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -807,15 +1308,15 @@ li {
 		}
 		
 		&.jg-warning {
-			color: $warning-colour;
+		//color: $warning-colour;
 		}
 		
 		&.jg-success {
-			color: $success-colour;
+		//color: $success-colour;
 		}
 		
 		&.jg-error {
-			color: $red-colour;
+		//color: $red-colour;
 		}
 		
 		hidden {
@@ -834,9 +1335,9 @@ li {
 		text-align: left;
 		
 		textarea, input {
-			color: $dark-colour;
+		//color: $dark-colour;
 			@include border-radius(5px);
-			border: none;
+		//border: none;
 			padding: 5px;
 			
 			&:focus {
@@ -859,15 +1360,15 @@ li {
 			&[type="submit"] {
 				width: 100px;
 				margin-top: 20px;
-				color: $light-colour;
-				background-color: $green-colour;
+			//color: $light-colour;
+			//background-color: $green-colour;
 				
 				&:hover {
-					background-color: $green-light-colour;
+				//background-color: $green-light-colour;
 				}
 				
 				&:active {
-					background-color: $green-colour;
+				//background-color: $green-colour;
 				}
 			}
 		}
@@ -884,7 +1385,7 @@ li {
 		}
 		
 		#jg-submit-msg {
-			color: $warning-colour;
+		//color: $warning-colour;
 			margin-left: 10px;
 			
 			&.hidden {

@@ -1,7 +1,12 @@
-<footer class="container-fluid">
+<footer class="container-fluid dark" ng-controller="ThemeController">
 	<div class="row">
 		<div class="col-xs-12 text-center">
 			<p>© {{year}} Jonathan Gilmour</p>
+			<div id="theme-selector" class="hidden">
+				<label>Theme <select ng-model="theme" ng-change="changeTheme()">
+				  {{{themeOptions}}}
+				</select></label>
+			</div>
 		</div>
 	</div>
 </footer>
