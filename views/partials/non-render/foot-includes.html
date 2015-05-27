@@ -22,3 +22,24 @@
 <!-- /Scripts -->
 
 <link rel="stylesheet" href="{!{>css/vendor/bootstrap-theme.css<}}" />
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".jg-project").each(function() {
+			$(this).css("height", "100px");
+			$(this).addClass("folded");
+			$("#drop",this).removeClass("hidden");
+			var self = this;
+			$("#drop",this).click(function() {
+				console.log("clicked");
+				if($(self).hasClass("folded")) {
+					$(self).css("height", "auto").removeClass("folded").addClass("unfolded");
+					$(this).removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+				}
+				else {
+					$(self).css("height", "100px").removeClass("unfolded").addClass("folded");
+					$(this).removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+				}
+			});
+		});
+	});
+</script>
